@@ -1,0 +1,255 @@
+{% extends 'base.html' %}
+{% load i18n static %}
+
+{% block external-scripts %}
+    <script src="{% static 'system/js/checkboxjs/jquery.tablecheckbox.min.js' %}"></script>
+{% endblock external-scripts %}
+{% block inline-styles %}
+    .paginator a{
+        color:rgba(7, 21, 34, 0.685);
+    }
+    .paginator span.active{
+        cursor: default;
+    }
+    table thead th{
+        text-transform: capitalize;
+        color: rgb(238, 238, 238);
+        background-color: rgba(3, 39, 82,0.68)!important;
+    }
+
+    table thead th, table tbody tr td:first-child, table tbody tr td:last-child{
+        text-align:center;
+    }
+
+    table thead th:first-child, table tbody tr td:first-child{
+        width: 12px;
+    }
+
+    table tbody tr td{
+        padding: 2px!important;
+    }
+
+    table tbody tr td.status-true,table tbody tr td.status-false{
+       text-align: center;
+       color:white; 
+    }
+
+    table tbody tr td span.status-mark{   
+        padding: 0 1.5px;
+       
+        border-radius: 50%;
+    }
+
+    table tbody tr td span.status-mark{
+        visibility:hidden;
+    }
+
+    table tbody tr td span.status-true{
+         background-color: rgb(7, 204, 40);
+    }
+
+    table tbody tr td span.status-false{
+        background-color: rgb(201, 15, 15);
+    }  
+{% endblock inline-styles %}
+
+{% block actionbuttons %}
+    <a class="btn btn-primary btn-sm" href="{% url add_url|default:"system:dashboard" %}">
+        <i class="fas fa-plus"></i>
+    </a>
+    <button class="btn btn-danger btn-sm" data-url="{{del_url|default:'system:dashboard'}}" id="del-checked">
+        <i class="fas fa-trash-alt"></i>
+    </button>
+{% endblock actionbuttons %}
+
+{% block main-content %}
+    <div class="card">
+        <div class="card-header">
+            <i class="fas fa-list"></i>
+            <span class="card-title">{{card_title}}</span>
+        </div>
+        <div class="card-body p-0 ">
+            {% if object_list  %}
+                {% block card-body %}{% endblock card-body %} 
+            {% else %}
+                <p class="text-center align-middle">No data</p>
+            {% endif %}
+            
+        </div>
+        {% if is_paginated %}
+            <div class="card-footer paginator">
+                {% if page_obj.has_previous %}
+                    <a class="btn btn-outline-info btn-sm mb-2" href="?page=1">&lt; first</a>
+                    <a class="btn btn-outline-info btn-sm mb-2" href="?page={{ page_obj.previous_page_number }}">&laquo; previous</a>
+                {% endif %}
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                        <span class="btn btn-info btn-sm mb-2 active">{{ num }}</span>
+                    {% elif num > page_obj.number|add:'-4' and num < page_obj.number|add:'4' %}
+                        <a class="btn btn-outline-info btn-sm mb-2" href="?page={{ num }}">{{ num }}</a>
+                    {% endif %}               
+                {% endfor %}
+                {% if page_obj.has_next%}
+                    <a class="btn btn-outline-info btn-sm mb-2" href="?page={{ page_obj.next_page_number }}">&raquo; next</a>
+                    <a class="btn btn-outline-info btn-sm mb-2" href="?page={{ page_obj.paginator.num_pages }}">&gt; last</a>
+                {% endif %}
+            </div>        
+        {% endif %}
+    </div>
+    {% block modal %}
+        <div class="modal fade" tabindex="-1" id="delete-modal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title">Confirm Deletion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <p>Are you sure.</p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="confirm-del" data-id="0" data-url="{{del_url|default:'system:dashboard'}}" class="btn btn-danger" >Confirm</button>
+                    </div>
+                </div>
+            </div>
+	    </div>
+
+        <div class="modal fade" tabindex="-1" id="message-modal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">User Message</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex">
+                            <h6 id="message-name" class="me-auto">From: <span id="name-value" class="text-secondary">name</span></h6>
+                            <small id="date" class="text-muted"></small>
+                        </div>
+                        
+                        <h6 id="mesage-email">Email: <span id="email-value" class="text-secondary">from</span></h6>
+                        <p id="message-text">message</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock modal %}
+    
+{% endblock main-content %}
+{% block inline-scripts %}
+    $(document).ready(function(){  
+        $('table').tablecheckbox({
+            selectedRowClass:'selected',
+            isChecked:function($checkbox){
+                return $checkbox.is(':checked');
+            },
+        });
+
+      
+        $("table tbody tr td.status-true").html('<span class="visible status-mark status-true">&check;</span>')
+        $("table tbody tr td.status-false").html('<span class="visible status-mark status-false">&Cross;</span>')
+    
+      
+       $('.view-msg-btn').click(function(){
+            let id = $(this).data("messageid");
+            let url = $(this).data("detailurl");
+            let csrf = $('table input[name=csrfmiddlewaretoken]').val()
+            console.log("MESSAGE ID:"+ id);
+            ajaxMessage(id,csrf,url)
+
+        });
+
+        $('#message-modal').on('hidden.bs.modal',function(){
+            $(this).find('#name-value').text("")
+            $(this).find('#date').text("")
+            $(this).find('#email-value').text("")
+            $(this).find('#message-text').text("")
+        })
+       
+       
+
+        {% comment %}initiate Deletion of a single table row at a time {% endcomment %}
+        $('.ask-delete').click(function(){
+            var id = $(this).data("userid");
+            console.log("ASK ID:"+ id);
+            $('#confirm-del').attr('id',id)
+        });
+
+        {% comment %} Confirm single deletion of table row {% endcomment %}
+        $('#confirm-del').on('click',function(){
+            var id = $(this).attr('id')
+            let url = $(this).data('url');
+            console.log("SINGLE ID:"+ id + " and url is: "+url);
+            let csrf = $('table input[name=csrfmiddlewaretoken]').val()
+            
+            DeleteAjax(id,csrf,url)
+            
+        })
+        
+
+        {% comment %} Delete multiple selected rows {% endcomment %}
+        $('#del-checked').on('click',function(){
+            let selected_id=[];
+            url = $(this).data("url")
+            console.log("Delete Url: "+url)
+            let csrf = $('table input[name=csrfmiddlewaretoken]').val()
+            console.log('CSRF: '+csrf)
+
+            $("table .selected input[type=checkbox]:checked").each(function () {     
+                selected_id.push(this.value)       
+            });
+            if(!selected_id.length > 0){
+                alert("Please select a row to delete")
+            }else{
+                let delconfirm = confirm("Are you sure")
+                if(delconfirm==true){
+                   DeleteAjax(selected_id,csrf,url)
+                   
+                }
+            }
+        });
+
+        function DeleteAjax(data,csrf,url){
+            $.ajax({
+                url:url,
+                type:'post',
+                dataType:"json",
+                data:{ data:data,csrfmiddlewaretoken:csrf}
+            }).done(function(res){                       
+                //console.log("ID:"+ data);
+                //console.log("RESP Data: "+res.data)
+                //console.log("RESP Errors: "+res.errors)
+                
+               $('#delete-modal').modal('hide')
+                $.each(res.data,function(i,id){
+                    $('#tr-'+id).css({'backgroundColor':'#ccc'})
+                    $('#tr-'+id).fadeOut('slow');
+                    $('#tr-'+id).remove()
+                })
+                location.reload()
+            }).fail(function(xhr,textStatus,error){
+                     console.log("ERRORS:"+ error);
+            })
+        }
+
+
+        function ajaxMessage(data,csrf,url){
+            $.ajax({
+                url:url,
+                type:'get',
+                dataType:"json",
+            }).done(function(res){                       
+                $('#message-modal').modal('show')
+                $('#message-modal').on('shown.bs.modal',function(){
+                    $(this).find('#name-value').text(res.name).fadeIn('slow')
+                    $(this).find('#date').text(res.date).fadeIn('slow')
+                    $(this).find('#email-value').text(res.email).fadeIn('slow')
+                    $(this).find('#message-text').text(res.message).fadeIn('slow')
+                })
+            }).fail(function(xhr,textStatus,error){
+                     console.log("ERRORS:"+ error);
+            })
+        }
+    });
+{% endblock inline-scripts %}

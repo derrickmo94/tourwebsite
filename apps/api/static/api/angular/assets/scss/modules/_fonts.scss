@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('../../fonts/regular/Lato-Regular.woff2') format('woff2'),
+    url('../../fonts/regular/Lato-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../../fonts/light/Lato-Light.woff2') format('woff2'),
+        url('../../fonts/light/Lato-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato Hairline';
+    src: url('../../fonts/thin/Lato-Hairline.woff2') format('woff2'),
+        url('../../fonts/thin/Lato-Hairline.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../../fonts/bold/Lato-Bold.woff2') format('woff2'),
+        url('../../fonts/bold/Lato-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../../fonts/black/Lato-Black.woff2') format('woff2'),
+        url('../../fonts/black/Lato-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,0 +1,9 @@
+{% extends 'add.html' %}
+{% load i18n static crispy_forms_tags %}
+
+{% block card-content %}
+   <form method="POST" enctype="multipart/form-data" id="customer-user-form">
+      {% crispy customer_form %}
+      {% crispy form %}
+   </form>
+{% endblock card-content %}

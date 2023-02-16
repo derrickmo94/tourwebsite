@@ -1,0 +1,22 @@
+[
+    {
+        "model": "touradmin.SystemSettings",
+        "pk": 1,
+        "fields": {
+            "launch_time": "2021-07-19",
+            "company_name": "company name",
+            "description": "We are a tour company by all meeans",
+            "meta_title": "tour comapny name-Tour and Travel",
+            "meta_description": "We are leading company in the industry",
+            "meta_keywords": "tour,travel,safaris,booking",
+            "logo": "system/default.png",
+            "icon": "system/default.png",
+            "phone_number": 256780238349,
+            "email":"company@domain.com",
+            "fax": 345,
+            "address_code": 56656,
+            "physical_address":"12th Main sStreet Broadway",
+            "status": 1
+        }
+    }
+]

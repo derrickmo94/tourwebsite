@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load i18n static crispy_forms_tags %}
+
+{% block external-styles %}{% endblock external-styles %}
+{% block external-scripts %}{% endblock external-scripts %}
+
+{% block inline-styles %}
+
+{% endblock inline-styles %}
+
+{% block actionbuttons %}
+    <button type="submit" form="{{ form_id }}" 
+        class="btn btn-primary btn-sm" 
+        onclick="!this.form && document.getElementById('{{form_id}}').submit">
+        <i class="fas fa-save"></i>
+    </button>
+    <a class="btn btn-danger btn-sm" href="{% url back_url %}"><i class="fas fa-undo"></i></a>
+{% endblock actionbuttons %}
+
+{% block main-content %}
+    <div class="form-errors">
+        {% block form-errors %}{% endblock form-errors %}
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <i class="fas fa-pencil-alt"></i>
+            <span class="card-title">{{card_title}}</span>
+        </div>
+        <div class="card-body">
+        {% block card-content %}{% endblock card-content %}   
+        </div>
+    </div>
+{% endblock main-content %}
+
+ {% block inline-scripts %}
+    $(document).ready(function(){
+       
+   });
+ 
+ {% endblock inline-scripts %}

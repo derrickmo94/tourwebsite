@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% load i18n static crispy_forms_tags %}
+
+{% block external-styles %}{% endblock external-styles %}
+{% block external-scripts %}{% endblock external-scripts %}
+
+{% block inline-styles %}
+    div#div_id_logo > div > div:first-child div, div#div_id_image > div > div:first-child div{
+        border: none;     
+    }
+
+    div#div_id_image > div > div:first-child div:nth-child(1), div#div_id_logo > div > div:first-child div:nth-child(1){
+        height:0;
+        width 0;
+        display:none;
+        visibility:hidden;
+        opacity:0;
+    }
+    
+
+    div#div_id_image > div > div:first-child div:nth-child(2) > span:nth-child(1),div#div_id_logo > div > div:first-child div:nth-child(2) > span:nth-child(1){
+        margin-right:0px;
+        font-size:0px;
+        width:0;
+        height:0;
+        opacity:0;
+        display:none;
+    } 
+
+    div#div_id_logo > div > div:first-child div:nth-child(2) > span:nth-child(2){
+        margin-right:8px;
+        height:0;
+        width 0;
+        display: none;
+        
+    } 
+
+    div#div_id_image > div > div:nth-child(2),div#div_id_logo > div > div:nth-child(2){
+        width: 0px;
+        height: 0px;
+        display: none;
+
+    };
+
+    {% comment %} style for add form {% endcomment %}
+    div#div_id_image > div > div.custom-file > input[type="file"], div#div_id_logo > div > div:first-child.custom-file input[type="file"]{
+        background-color:yellow;
+        display: none;
+    }
+    
+    div#div_id_image > div > div:first-child.custom-file label.custom-file-label,#div_id_logo > div > div:first-child.custom-file label.custom-file-label{
+        display: none;
+    }
+
+    .form-errors{
+        position: absolute!important;
+        top:0;
+        left:0;
+        z-index: 400;
+        display: inline;
+    } 
+    .form-errors .alert{
+        display:flex!important;
+        justify-content:center;
+    }
+
+    .form-errors .alert ul li{
+        align:center;
+    }
+
+{% endblock inline-styles %}
+
+{% block actionbuttons %}
+    <button type="submit" form="{{ form_id }}" 
+        class="btn btn-primary btn-sm" 
+        onclick="!this.form && document.getElementById('{{form_id}}').submit">
+        <i class="fas fa-save"></i>
+    </button>
+    <a class="btn btn-danger btn-sm" href="{% url back_url %}"><i class="fas fa-undo"></i></a>
+{% endblock actionbuttons %}
+
+{% block main-content %}
+    <div class="form-errors">
+        {% block form-errors %}{% endblock form-errors %}
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <i class="fas fa-pencil-alt"></i>
+            <span class="card-title">{{card_title}}</span>
+        </div>
+        <div class="card-body">
+        {% block card-content %}{% endblock card-content %}   
+        </div>
+    </div>
+{% endblock main-content %}
+
+ {% block inline-scripts %}
+    $(document).ready(function(){
+        //Script to manipulate the edit/update user form
+        $('div#div_id_image > div > div:first-child div:nth-child(2) > span:nth-child(1)').css({"display":"none","width":"0px"});
+        let href=  $('div#div_id_image > div > div:first-child div:nth-child(2) > span:first-child a').attr('href');
+    
+        $('div#div_id_image > div > div:first-child div:nth-child(2)')
+        .append('<img id="image-preview" class="img-thumbnail" style="width: 100px !important;height: 100px!important; cursor: pointer!important" src="'+ href + '" >');
+
+       /* $('div#div_id_image > div > div:first-child div:nth-child(2)').append(
+            '<span class="btn" id="image-upload-btn" style="height:20px;cursor: pointer;position:relative;top:35px;right:10px;transform:rotate(90deg)">'+
+            '<i class="fas fa-camera fa-lg text-primary"></i>'+
+            '</span>');*/
+
+        //$('div#div_id_image > div > div:first-child.custom-file input[type="file"]').css({"display":"none","wdith":"0px"})
+
+        $("#image-preview").on('click',function(e){
+            e.preventDefault;
+            $('#id_image').trigger('click');
+        });
+
+        $('#id_image').on('change',function(){
+            readURL(this)
+        });
+
+        $('#id_image').on('focus',function(){
+            $('#image-preview').focus()
+        });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                $('#image-preview').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        //Script to manipulate the new user form
+        function readNewURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                
+                $('#new-image-preview').attr('src', e.target.result);
+                console.log("Image Url "+ e.target.result)
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $('div#div_id_image > div > div:first-child.custom-file :input.custom-file-input').css({"visibiity":"hidden","display":"none"});
+        $('div#div_id_image > div > div:first-child.custom-file :input.custom-file-input').after('<img id="new-image-preview" class="img-thumbnail" style="width: 100px !important;height: 100px!important; cursor: pointer!important" src="/media/profile_image/default.png" />');
+        $('div#div_id_image > div > div:first-child.custom-file :input.custom-file-input').on('change',function(){
+            readNewURL(this)
+        });
+
+        $("#new-image-preview").on('click',function(e){
+            e.preventDefault;
+            $('#id_image').trigger('click');
+        });  
+   });
+ 
+ {% endblock inline-scripts %}

@@ -1,0 +1,151 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block meta-data %}{% endblock meta-data %}          
+        <title>{% block title %}{{page_title}}{% endblock %}</title>
+
+        <!--to be removed in prod  -->
+        <link rel="stylesheet" type="text/css" href="{% static 'system/css/bootstrap/css/bootstrap.min.css' %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        
+        <link rel="stylesheet" type="text/css" href="{% static 'system/css/base.css' %}?v=2">
+
+        {% block external-styles %}{% endblock external-styles %}
+        <!--to be removed in prod  -->
+        <link rel="stylesheet" href="{% static 'system/fonts/fontawesome/css/all.min.css' %}" />
+        <script src="https://kit.fontawesome.com/6a4a7feddb.js" crossorigin="anonymous"></script>
+        <!--to be removed in prod  -->
+        <script src="{% static 'system/css/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        <!--to be removed in prod  -->
+        <script src="{% static 'system/js/jquery.js' %}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="{% static 'system/js/base.js' %}?v=9"></script>
+
+        {% block external-scripts %}{% endblock external-scripts %}
+
+        <style>{% block inline-styles %}{% endblock inline-styles %}</style>  
+    </head>
+    <body>
+        <div class="container-fluid">
+            <header class="header d-flex align-items-center w-100">
+                <div class="site-title me-auto">
+                   {% if site_obj.logo %}
+                        <img src="{{site_obj.logo.url}}" width="30" height="30">
+                    {% else %}
+                        <img src="/media/system/default.png" width="30" height="30">
+                    {% endif %}  
+                    {{site_obj.company_name|title}}           
+                </div>   
+                {% comment %} <div class="flex-grow-1"></div>    {% endcomment %}   
+                <div class="d-lg-none" >
+                    <i class="open-btn fas fa-bars fa-2x me-2"></i>
+                </div>
+                <div class="user-img me-2 d-none d-lg-block ">
+                    <img src="{{request.user.image.url}}" alt="profile image">
+                   <span>{{request.user.username|default:'user name' }}</span>                  
+                </div> 
+                <a href="{% url 'user:logout' %}">
+                    <i class="fas fa-sign-out-alt fa-lg d-none d-md-inline-block"></i>   
+                </a>                   
+            </header>
+            <section class="row main-section">
+                <sidebar id="menu-wrapper" class="sidebar menu-wrapper col-0 col-lg-3">
+                    <div class="sidebar-menu row menu-content-wrapper">
+                        <div class="menu-content col-8 col-md-5 col-lg-3 p-0 pb-4">
+                            <header class="menu-content-header d-flex align-items-center">                                                  
+                                <div class="user-img me-2">
+                                   <img src="{{request.user.image.url}}" alt="profile image">
+                                     <span>{{request.user.username|default:'user name' }}</span>
+                                </div>  
+                                <div class="flex-grow-1"></div>   
+                                <a href="{% url 'user:logout' %}">
+                                    <i class="fas fa-sign-out-alt fa-2x"></i>   
+                                </a>               
+                            </header>
+                            <ul class="menu-list">
+                                <li class="menu-item"><a class="menu-link main-label d-block" href="{% url 'system:dashboard' %}">dashboard</a></li>
+                                <li class="menu-item">
+                                    <span class="main-label">Tours</span>
+                                    <ul class="menu-list">
+                                        <li class="menu-item"><a class="menu-link sub-label d-block" href="{% url 'tour:view-destinations' %}">&raquo;&raquo; destinations</a></li>
+                                        <li class="menu-item" id="2" ><a class="menu-link sub-label d-block" href="{% url 'tour:view-tour-categories' %}">&raquo;&raquo; categories</a></li>
+                                        <li class="menu-item" id="3" ><a class="menu-link sub-label d-block" href="{% url 'tour:view-tours' %}">&raquo;&raquo; tour experiences</a></li>
+                                        <li class="menu-item" id="4" ><a class="menu-link sub-label d-block" href="{% url 'tour:view-tour-reviews' %}">&raquo;&raquo; reviews</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <span class="main-label">Customer</span>
+                                    <ul class="menu-list">
+                                        <li class="menu-item" id="5" ><a class="menu-link sub-label d-block" href="{% url 'user:view-customers' %}#5">&raquo;&raquo; customers</a></li>
+                                        <li class="menu-item" id="6" ><a class="menu-link sub-label d-block" href="{% url 'user:view-customer-types' %}#6">&raquo;&raquo; customer type</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <span class="main-label">Marketing</span>
+                                    <ul class="menu-list">
+                                        <li class="menu-item" id="7" ><a class="menu-link sub-label d-block" href="{% url 'system:view-newsletter-subscriptions' %}#7">&raquo;&raquo; Newsletter</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item" id="8" ><a class="menu-link main-label d-block" href="{% url 'system:view-contact-messages' %}#8">&raquo;&raquo; user messages</a></li>
+                                <li class="menu-item" id="9" ><a class="menu-link main-label d-block" href="{% url 'tour:view-bookings' %}#9">&raquo;&raquo; bookings</a></li>
+                                <li class="menu-item">
+                                    <span class="main-label">Blog</span>
+                                    <ul class="menu-list">
+                                        <li class="menu-item" id="10" ><a class="menu-link sub-label  d-block" href="{% url 'blog:view-blog-categories' %}#10">&raquo;&raquo; categories</a></li>
+                                        <li class="menu-item" id="11" ><a class="menu-link sub-label d-block" href="{% url 'blog:view-blog-articles' %}#11">&raquo;&raquo; articles</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <span class="main-label">System</span>
+                                    <ul class="menu-list">
+                                        <li class="menu-item" id="12" ><a class="menu-link sub-label d-block" href="{% url 'user:view-user-groups' %}#12">&raquo;&raquo; user groups</a></li>
+                                        <li class="menu-item" id="13"><a class="menu-link sub-label d-block" href="{% url 'user:view-users' %}#13">&raquo;&raquo; users</a></li>
+                                        <li class="menu-item" id="14"><a class="menu-link sub-label d-block" href="{% url 'system:view-system-settings' %}#14">&raquo;&raquo; system settings</a></li>
+                                    </ul>
+                                </li>  
+                            </ul>
+                        </div>
+                    </div>
+                </sidebar>
+                <section class="content-section col-12 col-lg-9 content">
+                    <div class="content-header d-flex align-items-center mb-4 border border-bottom-1">
+                        <nav aria-label="breadcrumb" class="flex-grow-1">
+                            {% block breadcrumbs %}                           
+                                <ol class="breadcrumb m-0 d-flex align-items-baseline ">
+                                    <li class="active page-title me-2" title="User">{{page_title}}</li>
+                                   {% comment %}  <li class="breadcrumb-item align-middle"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Data</li> {% endcomment %}
+                                </ol>
+                            {% endblock breadcrumbs %}     
+                        </nav>                                                 
+                        <div class="buttons">
+                            {% block actionbuttons %}{% endblock actionbuttons %}            
+                        </div>
+                    </div>
+                    <div class="main-content bg-transparent px-1">
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="main-alert {% if message.tags == "error" %}alert-danger {% else %} alert-{{message.tags}} {% endif %} alert-dismissible fade show text-center">
+                                    <button type="button" data-bs-dismiss="alert" class="btn-sm btn-close"></button>
+                                    {{message|safe}}
+                                </div>                           
+                            {% endfor %}                       
+                        {% endif %}
+                        {% block main-content %}{% endblock main-content %}   
+                    </div>                   
+                </section>
+            </section>
+        </div>
+        <script>
+            {% block inline-scripts %}{% endblock inline-scripts %}
+        </script>
+                    
+    </body>
+</html>

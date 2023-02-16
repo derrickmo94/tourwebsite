@@ -1,0 +1,288 @@
+{% extends 'add.html' %}
+{% load i18n static crispy_forms_tags crispy_forms_filters %}
+
+{% block external-scripts %}
+  <script src ="{% static 'system/js/formset/jquery.formset.js' %}?v=3"></script>
+{% endblock external-scripts %}
+
+{% block inline-styles %}
+    div#div_id_logo > div > div:first-child div, div#div_id_icon > div > div:first-child div{
+        border: none;     
+    }
+
+    div#div_id_logo > div > div:first-child div:nth-child(1), div#div_id_icon > div > div:first-child div:nth-child(1){
+        height:0;
+        width 0;
+        display:none;
+        visibility:hidden;
+        opacity:0;
+    }
+
+    div#div_id_logo > div > div:first-child div:nth-child(2) > span:nth-child(1), div#div_id_icon > div > div:first-child div:nth-child(2) > span:nth-child(1){
+        margin-right:0px;
+        font-size:0px;
+        width:0;
+        height:0;
+        opacity:0;
+        display:none;
+    } 
+
+    div#div_id_logo > div > div:first-child div:nth-child(2) > span:nth-child(2), div#div_id_icon > div > div:first-child div:nth-child(2) > span:nth-child(2){
+        margin-right:8px;
+        height:0;
+        width 0;
+        display: none;
+        
+    } 
+
+    div#div_id_logo > div > div:first-child div:nth-child(2) > span:nth-child(3), div#div_id_icon > div > div:first-child div:nth-child(2) > span:nth-child(3){
+        margin-right:8px;
+        height:0;
+        width 0;
+        display: none;
+        
+    } 
+
+    div#div_id_logo > div > div:nth-child(2) ,div#div_id_icon > div > div:nth-child(2){
+        width: 0px;
+        height: 0px;
+        display: none;
+
+    };
+
+    {% comment %} style for add form {% endcomment %}
+    div#div_id_logo > div > div:first-child.custom-file input[type="file"], div#div_id_icon > div > div:first-child.custom-file input[type="file"]{
+        background-color:yellow;
+    }
+    
+    div#div_id_logo > div > div:first-child.custom-file label.custom-file-label, #div_id_icon > div > div:first-child.custom-file label.custom-file-label{
+        display: none;
+    }
+
+ 
+
+   tr.dynamic-company_image_formset > td > div:first-child > div:first-child.input-group,tr.dynamic-company_statement_formset > td > div:first-child > div:first-child.input-group{
+      border: none; 
+      height:0;
+      width 0;
+      display:none;
+      visibility:hidden;
+      opacity:0;    
+   }
+
+   tr.dynamic-company_image_formset > td > div:first-child > div:nth-child(2) > div:first-child,tr.dynamic-company_statement_formset > td > div:first-child > div:nth-child(2) > div:first-child{
+      margin-right:0px;
+      font-size:0px;
+      width:0;
+      height:0;
+      opacity:0;
+      display:none;
+   } 
+   
+{% endblock inline-styles %}
+
+{% block form-errors %}
+     {% if company_admin_formset.non_form_errors %}
+        {{ company_admin_formset|as_crispy_errors }}
+    {% endif %}
+{% endblock form-errors %}
+
+{% block card-content %}
+    <ul class="nav nav-tabs mb-2">
+        <li class="nav-item">
+            <button type="button" class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" role="tab" aria-controls="general" aria-selected="true">General</button>
+        </li>      
+        <li class="nav-item">
+            <button type="button" class="nav-link" id="company-images-tab" data-bs-toggle="tab" data-bs-target="#company-images" role="tab" aria-controls="company-images">Company Images</button>
+        </li>
+        <li class="nav-item">
+            <button type="button" class="nav-link" id="company-social-media-tab" data-bs-toggle="tab" data-bs-target="#company-social-media" role="tab" aria-controls="company-social-media" aria-selected="true">Social Media</button>
+        </li>
+        <li class="nav-item">
+            <button type="button" class="nav-link" id="company-statement-tab" data-bs-toggle="tab" data-bs-target="#company-statements" role="tab" aria-controls="company-statements" aria-selected="true">Company Statments</button>
+        </li>
+        <li class="nav-item">
+            <button type="button" class="nav-link" id="admin-tab" data-bs-toggle="tab" data-bs-target="#company-admins" role="tab" aria-controls="admins">Administrators</button>
+        </li>   
+    </ul>
+    <form method="POST" enctype="multipart/form-data" id="settings-form">
+        <div class="tab-content" id="tab-content">
+            <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">         
+                {% crispy form %}
+            </div>
+            <div class="tab-pane fade" id="company-images" role="tabpanel" aria-labelledby="company-images-tab">          
+                {% crispy company_image_formset helper %}
+            </div>
+            <div class="tab-pane fade" id="company-social-media" role="tabpanel" aria-labelledby="company-social-media-tab">          
+                {% crispy company_social_media_formset helper %}
+            </div>
+            <div class="tab-pane fade" id="company-statements" role="tabpanel" aria-labelledby="company-statement-tab">
+                {% crispy company_statement_formset helper %}
+            </div>
+            <div class="tab-pane fade" id="company-admins" role="tabpanel" aria-labelledby="company_admins-tab">        
+                {% crispy company_admin_formset helper %}
+            </div> 
+        </div>
+    </form>
+{% endblock card-content %}
+
+{% block inline-scripts %}
+    $(document).ready(function(){
+        $('.formset-row-{{company_image_formset.prefix}}').formset({
+         prefix: '{{company_image_formset.prefix}}',
+         formCssClass: 'dynamic-company_image_formset',
+         deleteCssClass: 'btn btn-sm btn-danger delete-row',
+         addCssClass: ' btn btn-sm btn-primary add-row'
+      });
+
+      $('.formset-row-{{company_statement_formset.prefix}}').formset({
+        prefix: '{{company_statement_formset.prefix}}',
+        formCssClass: 'dynamic-company_statement_formset',
+        deleteCssClass: 'btn btn-sm btn-danger delete-row',
+        addCssClass: ' btn btn-sm btn-primary add-row',
+      });
+
+      $('.formset-row-{{company_admin_formset.prefix}}').formset({
+        prefix: '{{company_admin_formset.prefix}}',
+        formCssClass: 'dynamic-company_admin_formset',
+        deleteCssClass: 'btn btn-sm btn-danger delete-row',
+        addCssClass: ' btn btn-sm btn-primary add-row'
+      });
+
+      $('.formset-row-{{company_social_media_formset.prefix}}').formset({
+        prefix: '{{company_social_media_formset.prefix}}',
+        formCssClass: 'dynamic-company_social_media_formset',
+        deleteCssClass: 'btn btn-sm btn-danger delete-row',
+        addCssClass: ' btn btn-sm btn-primary add-row'
+      });
+
+
+        //Script to manipulate the edit/update user form
+        $('div#div_id_logo > div > div:first-child div:nth-child(2) > span:nth-child(1)').css({"display":"none","width":"0"});
+        let logo_href=  $('div#div_id_logo > div > div:first-child div:nth-child(2) > span:first-child a').attr('href');
+    
+        $('div#div_id_logo > div > div:first-child div:nth-child(2)')
+        .prepend('<img id="logo-preview" focus=true class="img-thumbnail" style="width:100px !important; height: 100px !important; align-self:top" src="'+ logo_href + '" >');
+
+        $('div#div_id_logo > div > div:first-child div:nth-child(2)').append(
+            '<span class="btn" id="logo-upload-btn" style="height:20px;cursor: pointer;position:relative;top:35px;right:10px;transform:rotate(90deg)">'+
+            '<i class="fas fa-camera fa-lg text-primary"></i>'+
+            '</span>');
+
+        $("#logo-upload-btn").on('click',function(e){
+            e.preventDefault;
+            $('#id_logo').trigger('click');
+        });
+
+        $('#id_logo').on('change',function(){
+            readLogoURL(this)
+        });
+
+         $('#id_logo').on('focus',function(){
+            $('#logo-preview').focus()
+        });
+
+        function readLogoURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                $('#logo-preview').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        //Script to manipulate the logo on the add form
+        function readNewLogoURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                
+                $('#new-logo-preview').attr('src', e.target.result);
+                console.log("Image Url "+ e.target.result)
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $('#id_logo').on('focus',function(){
+            $('#new-logo-preview').focus()
+        });
+
+        $('div#div_id_logo > div > div:first-child.custom-file :input.custom-file-input').css({"visibiity":"hidden","display":"none"});
+        $('div#div_id_logo > div > div:first-child.custom-file :input.custom-file-input').after('<span id="new-logo-preview-label"><img id="new-logo-preview" class="img-thumbnail" style="width: 100px !important;height: 100px;!important;cursor: pointer;" src="/media/profile_image/default.png" /></span>');
+        $('div#div_id_logo > div > div:first-child.custom-file :input.custom-file-input').on('change',function(){
+            readNewLogoURL(this)
+        });
+
+        $("#new-logo-preview").on('click',function(e){
+            e.preventDefault;
+            $('#id_logo').trigger('click');
+        });
+
+
+        //SCRIPT TO MANIPULATE THE ICON
+        $('div#div_id_icon > div > div:first-child div:nth-child(2) > span:nth-child(1)').css({"display":"none","width":"0"});
+        let icon_href=  $('div#div_id_icon > div > div:first-child div:nth-child(2) > span:first-child a').attr('href');
+    
+        $('div#div_id_icon > div > div:first-child div:nth-child(2)')
+        .prepend('<img id="icon-preview" class="img-thumbnail" style="width:100px !important; height: 100px !important;" src="'+ icon_href + '" >');
+
+        $('div#div_id_icon > div > div:first-child div:nth-child(2)').append(
+            '<span class="btn" id="icon-upload-btn" style="height:20px;cursor: pointer;position:relative;top:35px;right:10px;transform:rotate(90deg)">'+
+            '<i class="fas fa-camera fa-lg text-primary"></i>'+
+            '</span>');
+
+        $("#icon-upload-btn").on('click',function(e){
+            e.preventDefault;
+            $('#id_icon').trigger('click');
+        });
+
+        $('#id_icon').on('change',function(){
+            readIconURL(this)
+        });
+
+        function readIconURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                $('#icon-preview').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        //Script to manipulate the icon on the add form
+        function readNewIconURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                
+                $('#new-icon-preview').attr('src', e.target.result);
+                console.log("Image Url "+ e.target.result)
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $('div#div_id_icon > div > div:first-child.custom-file :input.custom-file-input').css({"visibiity":"hidden","display":"none"});
+        $('div#div_id_icon > div > div:first-child.custom-file :input.custom-file-input').after('<span id="new-icon-preview-label"><img id="new-icon-preview" class="img-thumbnail" style="width: 100px !important;height: 100px;!important;cursor: pointer;" src="/media/profile_image/default.png" /></span>');
+        $('div#div_id_icon > div > div:first-child.custom-file :input.custom-file-input').on('change',function(){
+            readNewIconURL(this)
+        });
+
+        $("#new-icon-preview").on('click',function(e){
+            e.preventDefault;
+            $('#id_icon').trigger('click');
+        });
+   });
+ 
+ {% endblock inline-scripts %}

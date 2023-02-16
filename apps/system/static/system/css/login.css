@@ -1,0 +1,45 @@
+body{
+    /*background-image: url("{% static 'touradmin/images/background-img.jpg' %}");*/
+    background-image: url('../images/background-img.jpg');
+    background-attachment:fixed;
+    background-position:top;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-blend-mode: darken;
+}
+.login-header{
+    background-color: rgb(14, 32, 54);
+    color: #fff;
+    padding: 1.1em .5em ;
+
+    width: 100vw;
+
+}
+.login-wrapper{
+    width:100%;
+    height:80vh;
+   
+}
+.outer-card{
+    position: relative;
+    background-color: rgb(231, 23, 23);
+    border-radius: 8px;
+}
+
+.inner-card{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5000;
+}
+
+.card-over-lay{
+    position: absolute;
+    top: 0;
+    left: 0;
+   
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    z-index: 1;
+}

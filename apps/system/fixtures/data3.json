@@ -1,0 +1,1332 @@
+[
+      {
+            "model": "user.user",
+            "pk": 4,
+            "fields": {
+                  "password": "pbkdf2_sha256$260000$pT6gGYeGBq7A4G8UZrUwvF$BZrKKUxWvSs2X/mjmvZem/zHyl99ZoiH2kC89++OQ0Y=",
+                  "last_login": "2021-09-22T10:43:37.706Z",
+                  "is_superuser": true,
+                  "username": "manager1",
+                  "first_name": "manger",
+                  "last_name": "manager",
+                  "is_staff": true,
+                  "is_active": true,
+                  "date_joined": "2021-07-20T00:55:37.093Z",
+                  "image": "profile_image/profile_3_cfGOk4i.jpg",
+                  "email": "job@gmail.com",
+                  "phone_number": null,
+                  "groups": null,
+                  "user_permissions": []
+            }
+      },
+      {
+            "model": "user.user",
+            "pk": 52,
+            "fields": {
+                  "password": "pbkdf2_sha256$260000$aWlkpBbwXBZzABvhxmxY4L$77ErGxF7UJjfK3B3uME1te1hgtDoIKcc1na90DfutLM=",
+                  "last_login": null,
+                  "is_superuser": false,
+                  "username": "demo1",
+                  "first_name": "demo1",
+                  "last_name": "admin1",
+                  "is_staff": true,
+                  "is_active": false,
+                  "date_joined": "2021-08-16T13:09:53.329Z",
+                  "image": "profile_image/profile_2_st1AcZ8.jpg",
+                  "email": "demo1@gmail.com",
+                  "phone_number": null,
+                  "groups": null,
+                  "user_permissions": []
+            }
+      },
+      {
+            "model": "user.user",
+            "pk": 53,
+            "fields": {
+                  "password": "pbkdf2_sha256$260000$bCWnrRNaMxOxqoMuVUAOlP$pgGHhsPOSWja9rV/9Wo8RDzhyX0E6IHPiO3qmhvauIo=",
+                  "last_login": null,
+                  "is_superuser": false,
+                  "username": "demo2",
+                  "first_name": "demo2",
+                  "last_name": "admin",
+                  "is_staff": true,
+                  "is_active": false,
+                  "date_joined": "2021-08-16T13:29:36.342Z",
+                  "image": "profile_image/profile_1_hozZ4p6.jpg",
+                  "email": "demo2@gmail.com",
+                  "phone_number": null,
+                  "groups": null,
+                  "user_permissions": []
+            }
+      },
+      {
+            "model": "user.user",
+            "pk": 54,
+            "fields": {
+                  "password": "pbkdf2_sha256$260000$JR4E31eq0WUThVEUN4T6jF$Upunxvv/oDvqtvPRQWhLWmA3L4Xp0IpOsCpNjEe4rK0=",
+                  "last_login": "2021-09-09T08:15:57.123Z",
+                  "is_superuser": false,
+                  "username": "customer1",
+                  "first_name": "derrick",
+                  "last_name": "mo",
+                  "is_staff": false,
+                  "is_active": true,
+                  "date_joined": "2021-09-06T01:07:38.605Z",
+                  "image": "system/default.png",
+                  "email": "customer1@gmail.com",
+                  "phone_number": 256789934060,
+                  "groups": null,
+                  "user_permissions": []
+            }
+      },
+      {
+            "model": "user.adminuserprofile",
+            "pk": 3,
+            "fields": {
+                  "user": 4,
+                  "is_admin": true
+            }
+      },
+      {
+            "model": "user.adminuserprofile",
+            "pk": 13,
+            "fields": {
+                  "user": 52,
+                  "is_admin": true
+            }
+      },
+      {
+            "model": "user.adminuserprofile",
+            "pk": 14,
+            "fields": {
+                  "user": 53,
+                  "is_admin": true
+            }
+      },
+      {
+            "model": "user.customertype",
+            "pk": 1,
+            "fields": {
+                  "type_name": "individual traveller",
+                  "status": true
+            }
+      },
+      {
+            "model": "user.customeruserprofile",
+            "pk": 1,
+            "fields": {
+                  "user": 54,
+                  "is_customer": true,
+                  "customer_type": 1
+            }
+      },
+      {
+            "model": "system.contactmessage",
+            "pk": 1,
+            "fields": {
+                  "full_name": "derrick mo",
+                  "email_address": "derrick.mo94@gmail.com",
+                  "date_sent": "2021-09-04T16:34:33.614Z",
+                  "text_message": "how are u over there"
+            }
+      },
+      {
+            "model": "system.contactmessage",
+            "pk": 2,
+            "fields": {
+                  "full_name": "derrick",
+                  "email_address": "derrick.mo94@gmail.com",
+                  "date_sent": "2021-09-08T11:24:48.073Z",
+                  "text_message": "I like this site"
+            }
+      },
+      {
+            "model": "system.contactmessage",
+            "pk": 3,
+            "fields": {
+                  "full_name": "derrick",
+                  "email_address": "derrick.mo94@gmail.com",
+                  "date_sent": "2021-09-08T11:25:05.044Z",
+                  "text_message": "I love this site"
+            }
+      },
+      {
+            "model": "system.contactmessage",
+            "pk": 4,
+            "fields": {
+                  "full_name": "derrick",
+                  "email_address": "derrick.mo94@gmail.com",
+                  "date_sent": "2021-09-08T11:26:14.428Z",
+                  "text_message": "ghfghvgh"
+            }
+      },
+      {
+            "model": "system.contactmessage",
+            "pk": 5,
+            "fields": {
+                  "full_name": "derrick",
+                  "email_address": "derrick.mo94@gmail.com",
+                  "date_sent": "2021-09-08T12:14:12.272Z",
+                  "text_message": "xhcgv"
+            }
+      },
+      {
+            "model": "system.contactmessage",
+            "pk": 6,
+            "fields": {
+                  "full_name": "ccd",
+                  "email_address": "derrick.mo94@gmail.com",
+                  "date_sent": "2021-09-08T12:14:36.465Z",
+                  "text_message": "xdvdv"
+            }
+      },
+      {
+            "model": "system.contactmessage",
+            "pk": 7,
+            "fields": {
+                  "full_name": "derrfg",
+                  "email_address": "derrick.mo94@gmail.com",
+                  "date_sent": "2021-09-08T16:50:42.828Z",
+                  "text_message": "gfcvgjh"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 1,
+            "fields": {
+                  "full_name": "mod",
+                  "email_address": "derrick.mo94@gmail.com",
+                  "subscription_date": "2021-09-08T07:13:24.976Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 2,
+            "fields": {
+                  "full_name": "mod",
+                  "email_address": "derrick.mo94@gmail.com",
+                  "subscription_date": "2021-09-08T07:13:43.828Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 3,
+            "fields": {
+                  "full_name": "mod",
+                  "email_address": "derrick.mo94@gmail.com",
+                  "subscription_date": "2021-09-08T07:13:49.727Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 4,
+            "fields": {
+                  "full_name": "mod",
+                  "email_address": "derrick.mo94@gmail.com",
+                  "subscription_date": "2021-09-08T07:13:55.672Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 5,
+            "fields": {
+                  "full_name": "mod",
+                  "email_address": "derrick.mo94@gmail.com",
+                  "subscription_date": "2021-09-08T07:13:59.723Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 6,
+            "fields": {
+                  "full_name": "mod",
+                  "email_address": "derrick.mo94@gmail.com",
+                  "subscription_date": "2021-09-08T07:14:01.660Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 7,
+            "fields": {
+                  "full_name": "mod",
+                  "email_address": "derrick.mo94@gmail.com",
+                  "subscription_date": "2021-09-08T07:14:03.380Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 8,
+            "fields": {
+                  "full_name": "mod",
+                  "email_address": "derrick.mo94@gmail.com",
+                  "subscription_date": "2021-09-08T07:14:04.651Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 9,
+            "fields": {
+                  "full_name": "mod",
+                  "email_address": "derrick.mo94@gmail.com",
+                  "subscription_date": "2021-09-08T07:14:05.842Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 11,
+            "fields": {
+                  "full_name": "derrick.mo",
+                  "email_address": "demo4@gmail.com",
+                  "subscription_date": "2021-09-08T07:31:44.665Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 12,
+            "fields": {
+                  "full_name": "derrick.mo",
+                  "email_address": "customer2@gmail.com",
+                  "subscription_date": "2021-09-08T11:19:12.275Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 13,
+            "fields": {
+                  "full_name": "derrick.mo",
+                  "email_address": "demo3@gmail.com",
+                  "subscription_date": "2021-09-17T22:39:35.886Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 14,
+            "fields": {
+                  "full_name": "derrick.mo",
+                  "email_address": "demo3@gmail.com",
+                  "subscription_date": "2021-09-17T22:39:47.676Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 15,
+            "fields": {
+                  "full_name": "derrick.mo",
+                  "email_address": "demo3@gmail.com",
+                  "subscription_date": "2021-09-17T22:39:58.865Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 16,
+            "fields": {
+                  "full_name": "derrick.mo",
+                  "email_address": "demo3@gmail.com",
+                  "subscription_date": "2021-09-17T22:40:02.784Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 17,
+            "fields": {
+                  "full_name": "derrick.mo",
+                  "email_address": "demo3@gmail.com",
+                  "subscription_date": "2021-09-17T22:40:05.598Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 18,
+            "fields": {
+                  "full_name": "derrick.mo",
+                  "email_address": "demo3@gmail.com",
+                  "subscription_date": "2021-09-17T22:40:07.405Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 19,
+            "fields": {
+                  "full_name": "derrick.mo",
+                  "email_address": "demo3@gmail.com",
+                  "subscription_date": "2021-09-17T22:40:09.825Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 20,
+            "fields": {
+                  "full_name": "derrick.mo",
+                  "email_address": "demo3@gmail.com",
+                  "subscription_date": "2021-09-17T22:40:11.505Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 21,
+            "fields": {
+                  "full_name": "derrick.mo",
+                  "email_address": "demo3@gmail.com",
+                  "subscription_date": "2021-09-17T22:40:12.415Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 22,
+            "fields": {
+                  "full_name": "derrick.mo",
+                  "email_address": "demo3@gmail.com",
+                  "subscription_date": "2021-09-17T22:40:13.272Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 23,
+            "fields": {
+                  "full_name": "derrick.mo",
+                  "email_address": "demo3@gmail.com",
+                  "subscription_date": "2021-09-17T22:40:14.153Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 24,
+            "fields": {
+                  "full_name": "derrick.mo",
+                  "email_address": "demo3@gmail.com",
+                  "subscription_date": "2021-09-17T22:40:15.018Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 25,
+            "fields": {
+                  "full_name": "derrick.mo",
+                  "email_address": "demo3@gmail.com",
+                  "subscription_date": "2021-09-17T22:40:16.001Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 26,
+            "fields": {
+                  "full_name": "derrick.mo",
+                  "email_address": "demo3@gmail.com",
+                  "subscription_date": "2021-09-17T22:40:16.939Z"
+            }
+      },
+      {
+            "model": "system.newslettersubscription",
+            "pk": 27,
+            "fields": {
+                  "full_name": "derrick.mo",
+                  "email_address": "demo3@gmail.com",
+                  "subscription_date": "2021-09-17T22:40:17.868Z"
+            }
+      },
+      {
+            "model": "system.systemsettings",
+            "pk": 1,
+            "fields": {
+                  "launch_time": "2021-07-19",
+                  "company_name": "intare tours and safaris",
+                  "description": "We are a tour company by all meeans",
+                  "meta_title": "Intare Tours and Safaris - Explore the world with us",
+                  "meta_description": "We are leading company in the industry",
+                  "meta_keywords": "tour,travel,safaris,booking",
+                  "logo": "system/logos/IMG-20210518-WA0000.jpg",
+                  "icon": "system/logos/IMG-20210518-WA0000_lb1SVcH.jpg",
+                  "phone_number": "256780238349",
+                  "phone_message": "Don't hestate to contact us , we are here to help",
+                  "email": "support@intaretoursandsafaris.com",
+                  "email_message": "You can as well reach us via our support contact email and we will endavor to get back to you",
+                  "fax": "345",
+                  "address_code": 56656,
+                  "physical_address": "12th Main Street Broadway",
+                  "physical_address_message": "We are easily located and locatable given the strategic position",
+                  "employee_number": 300,
+                  "tour_bookings": 230,
+                  "status": true
+            }
+      },
+      {
+            "model": "system.companystatement",
+            "pk": 1,
+            "fields": {
+                  "image": "system/company_statement/daniel-roe-lpjb_UMOyx8-unsplash.jpg",
+                  "statement_title": "our mission",
+                  "statement": "To serve you to the very best",
+                  "company_settings": 1
+            }
+      },
+      {
+            "model": "system.companystatement",
+            "pk": 2,
+            "fields": {
+                  "image": "system/company_statement/kunal-shinde--f0YLss50Bs-unsplash.jpg",
+                  "statement_title": "our goal",
+                  "statement": "To pioneer a new way of life for the tourism industry",
+                  "company_settings": 1
+            }
+      },
+      {
+            "model": "system.companystatement",
+            "pk": 3,
+            "fields": {
+                  "image": "system/company_statement/qingbao-meng-01_igFr7hd4-unsplash.jpg",
+                  "statement_title": "our vision",
+                  "statement": "To Innoventvely transform transform the tourism sector",
+                  "company_settings": 1
+            }
+      },
+      {
+            "model": "system.companystatement",
+            "pk": 4,
+            "fields": {
+                  "image": "system/company_statement/matt-nelson-bx4WS8mhz3w-unsplash.jpg",
+                  "statement_title": "our objective",
+                  "statement": "To shine out as the leading in the tourism industry",
+                  "company_settings": 1
+            }
+      },
+      {
+            "model": "system.companyimage",
+            "pk": 13,
+            "fields": {
+                  "image": "system/company/vincent-guth-uhoILl3HUZM-unsplash_copy.jpg",
+                  "company_settings": 1
+            }
+      },
+      {
+            "model": "system.companyimage",
+            "pk": 14,
+            "fields": {
+                  "image": "system/company/shifaaz-shamoon-oR0uERTVyD0-unsplash.jpg",
+                  "company_settings": 1
+            }
+      },
+      {
+            "model": "system.companyimage",
+            "pk": 15,
+            "fields": {
+                  "image": "system/company/sebastian-unrau-v4e3JI7DDHI-unsplash.jpg",
+                  "company_settings": 1
+            }
+      },
+      {
+            "model": "system.companyimage",
+            "pk": 16,
+            "fields": {
+                  "image": "system/company/peter-jan-rijpkema-wI6o8OwUwdw-unsplash.jpg",
+                  "company_settings": 1
+            }
+      },
+      {
+            "model": "system.companyimage",
+            "pk": 17,
+            "fields": {
+                  "image": "system/company/oliver-niblett-qGGBcLDsUtQ-unsplash.jpg",
+                  "company_settings": 1
+            }
+      },
+      {
+            "model": "system.companyimage",
+            "pk": 18,
+            "fields": {
+                  "image": "system/company/lerone-pieters-7Q7nmszXoZk-unsplash.jpg",
+                  "company_settings": 1
+            }
+      },
+      {
+            "model": "system.companyimage",
+            "pk": 19,
+            "fields": {
+                  "image": "system/company/leo-rivas-OR_3rbIv5yI-unsplash.jpg",
+                  "company_settings": 1
+            }
+      },
+      {
+            "model": "system.companyimage",
+            "pk": 20,
+            "fields": {
+                  "image": "system/company/johannes-plenio-RwHv7LgeC7s-unsplash.jpg",
+                  "company_settings": 1
+            }
+      },
+      {
+            "model": "system.companyimage",
+            "pk": 21,
+            "fields": {
+                  "image": "system/company/joel-filipe-QwoNAhbmLLo-unsplash.jpg",
+                  "company_settings": 1
+            }
+      },
+      {
+            "model": "system.companyadmin",
+            "pk": 4,
+            "fields": {
+                  "user": 3,
+                  "company_settings": 1,
+                  "title": "managing director",
+                  "is_company_admin": true
+            }
+      },
+      {
+            "model": "system.companyadmin",
+            "pk": 5,
+            "fields": {
+                  "user": 13,
+                  "company_settings": 1,
+                  "title": "director operations",
+                  "is_company_admin": true
+            }
+      },
+      {
+            "model": "system.companyadmin",
+            "pk": 6,
+            "fields": {
+                  "user": 14,
+                  "company_settings": 1,
+                  "title": "acting CEO",
+                  "is_company_admin": true
+            }
+      },
+      {
+            "model": "system.companysocialmedia",
+            "pk": 1,
+            "fields": {
+                  "social_media_icon": "fab fa-facebook",
+                  "social_media_handle": "@intaretoursandsafaris",
+                  "company_settings": 1
+            }
+      },
+      {
+            "model": "system.companysocialmedia",
+            "pk": 2,
+            "fields": {
+                  "social_media_icon": "fab fa-twitter-square",
+                  "social_media_handle": "@intaretoursandsafaris",
+                  "company_settings": 1
+            }
+      },
+      {
+            "model": "system.companysocialmedia",
+            "pk": 3,
+            "fields": {
+                  "social_media_icon": "fab fa-instagram",
+                  "social_media_handle": "@intaretoursandsafaris",
+                  "company_settings": 1
+            }
+      },
+      {
+            "model": "tour.tourdestination",
+            "pk": 1,
+            "fields": {
+                  "destination_slug": "uganda-mbarara",
+                  "name": "Mbarara",
+                  "country": "Uganda",
+                  "tag_line": "epic center",
+                  "tag_text": null,
+                  "image": "tour/destinations/tour_39.jpg",
+                  "description": null,
+                  "status": true
+            }
+      },
+      {
+            "model": "tour.tourdestination",
+            "pk": 2,
+            "fields": {
+                  "destination_slug": "uganda-kampala",
+                  "name": "Kampala",
+                  "country": "Uganda",
+                  "tag_line": "city center",
+                  "tag_text": "Kampala is where it all happens and ends!",
+                  "image": "tour/destinations/tour_37_HeRaNG5.jpg",
+                  "description": null,
+                  "status": true
+            }
+      },
+      {
+            "model": "tour.tourdestination",
+            "pk": 3,
+            "fields": {
+                  "destination_slug": "uganda-karamoja",
+                  "name": "Karamoja",
+                  "country": "Uganda",
+                  "tag_line": "culture land",
+                  "tag_text": null,
+                  "image": "tour/destinations/tour_34_DUp2Fns.jpg",
+                  "description": null,
+                  "status": true
+            }
+      },
+      {
+            "model": "tour.tourdestination",
+            "pk": 4,
+            "fields": {
+                  "destination_slug": "uganda-masaka",
+                  "name": "Masaka",
+                  "country": "Uganda",
+                  "tag_line": "The kings home",
+                  "tag_text": null,
+                  "image": "tour/destinations/tour_30.jpg",
+                  "description": null,
+                  "status": true
+            }
+      },
+      {
+            "model": "tour.tourdestination",
+            "pk": 5,
+            "fields": {
+                  "destination_slug": "uganda-fort-portal",
+                  "name": "fort portal",
+                  "country": "Uganda",
+                  "tag_line": "where the  milk flows from",
+                  "tag_text": null,
+                  "image": "tour/destinations/tour_23.jpg",
+                  "description": null,
+                  "status": true
+            }
+      },
+      {
+            "model": "tour.tourdestination",
+            "pk": 6,
+            "fields": {
+                  "destination_slug": "uganda-west-nile",
+                  "name": "west Nile",
+                  "country": "Uganda",
+                  "tag_line": "its the only true west :)",
+                  "tag_text": null,
+                  "image": "tour/destinations/tour_12.jpg",
+                  "description": null,
+                  "status": true
+            }
+      },
+      {
+            "model": "tour.tourcategory",
+            "pk": 1,
+            "fields": {
+                  "category_slug": "out-door-tours",
+                  "name": "out door tours",
+                  "image": "tour/categories/tour_39.jpg",
+                  "description": null,
+                  "status": true
+            }
+      },
+      {
+            "model": "tour.tourcategory",
+            "pk": 2,
+            "fields": {
+                  "category_slug": "city-tours",
+                  "name": "city tours",
+                  "image": "tour/categories/tour_37_BOOmQ6q.jpg",
+                  "description": null,
+                  "status": true
+            }
+      },
+      {
+            "model": "tour.tourcategory",
+            "pk": 3,
+            "fields": {
+                  "category_slug": "culture-thematic-tours",
+                  "name": "culture & thematic tours",
+                  "image": "tour/categories/tour_38.jpg",
+                  "description": null,
+                  "status": true
+            }
+      },
+      {
+            "model": "tour.tourcategory",
+            "pk": 4,
+            "fields": {
+                  "category_slug": "family-friendly-tours",
+                  "name": "family & friendly tours",
+                  "image": "tour/categories/tour_31.jpg",
+                  "description": null,
+                  "status": true
+            }
+      },
+      {
+            "model": "tour.tourcategory",
+            "pk": 5,
+            "fields": {
+                  "category_slug": "relaxation-tours",
+                  "name": "relaxation tours",
+                  "image": "tour/categories/tour_36.jpg",
+                  "description": null,
+                  "status": true
+            }
+      },
+      {
+            "model": "tour.tourcategory",
+            "pk": 6,
+            "fields": {
+                  "category_slug": "holiday-seasonal-tours",
+                  "name": "holiday & seasonal tours",
+                  "image": "tour/categories/tour_40.jpg",
+                  "description": null,
+                  "status": true
+            }
+      },
+      {
+            "model": "tour.tourcategory",
+            "pk": 7,
+            "fields": {
+                  "category_slug": "wild-adventure-tours",
+                  "name": "wild & adventure tours",
+                  "image": "tour/categories/tour_31.jpg",
+                  "description": null,
+                  "status": true
+            }
+      },
+      {
+            "model": "tour.tour",
+            "pk": 1,
+            "fields": {
+                  "tour_slug": "boat-riding",
+                  "name": "boat riding",
+                  "image": "tour/tours/tour_34.jpg",
+                  "destination": 1,
+                  "category": 2,
+                  "price": "670000.00",
+                  "discount": 3,
+                  "duration": 5,
+                  "description": "Reprehenderit anim enim excepteur dolor deserunt labore commodo irure. Mollit tempor cupidatat commodo magna duis ipsum sit, cillum est duis aliquip, in voluptate ad labore laborum quis. Aliqua ipsum adipiscing nostrud magna. Incididunt ea ipsum incididunt velit dolor, dolor est occaecat irure. Est eiusmod culpa culpa, ullamco commodo ipsum consequat tempor magna. Voluptate lorem commodo qui ullamco non eu ut. Incididunt eiusmod enim est sed ad ipsum sunt pariatur. Officia est nisi sed non ullamco nisi. Non labore minim magna exercitation et.\r\n\r\nDeserunt ad irure veniam sunt dolor excepteur duis labore, voluptate anim velit commodo voluptate. Culpa laboris dolor sed ipsum est sit anim. Magna occaecat consectetur consectetur consectetur. Minim reprehenderit mollit exercitation cupidatat. Et aliqua voluptate tempor exercitation incididunt nisi qui, proident occaecat tempor esse enim eu ea consectetur. Esse excepteur voluptate sunt cupidatat ullamco aute aute. Reprehenderit laboris consequat consectetur magna dolor ut exercitation exercitation. Sit consectetur commodo exercitation do fugiat elit laborum anim et. Enim incididunt dolore incididunt adipiscing ullamco aliquip id. Ex laboris nulla veniam amet. Deserunt cillum ipsum cillum enim. Id enim aute nisi. Ad culpa pariatur esse. Cillum mollit est duis dolore consequat et do. Laboris minim eiusmod nulla non ea, deserunt nisi aute proident magna consequat cillum quis, dolore labore officia ut.\r\n\r\nId elit fugiat ut cillum. Ullamco laborum dolore aliqua. Officia officia aliqua sunt deserunt eu eiusmod. Sunt consequat magna tempor sint. Eu nostrud ex id consequat consequat magna sint ipsum amet.",
+                  "reviews": 1,
+                  "rating": "3.0",
+                  "advertise": false,
+                  "ad_title": null,
+                  "ad_name": null,
+                  "ad_description": "",
+                  "new_tag": "New",
+                  "added": "2021-07-20",
+                  "updated": "2021-09-23",
+                  "status": true,
+                  "discounted_price": "649900.00"
+            }
+      },
+      {
+            "model": "tour.tour",
+            "pk": 2,
+            "fields": {
+                  "tour_slug": "water-rafting-and-drills",
+                  "name": "water rafting and drills",
+                  "image": "tour/tours/tour_38.jpg",
+                  "destination": 6,
+                  "category": 1,
+                  "price": "560000.00",
+                  "discount": 5,
+                  "duration": 6,
+                  "description": "Reprehenderit anim enim excepteur dolor deserunt labore commodo irure. Mollit tempor cupidatat commodo magna duis ipsum sit, cillum est duis aliquip, in voluptate ad labore laborum quis. Aliqua ipsum adipiscing nostrud magna. Incididunt ea ipsum incididunt velit dolor, dolor est occaecat irure. Est eiusmod culpa culpa, ullamco commodo ipsum consequat tempor magna. Voluptate lorem commodo qui ullamco non eu ut. Incididunt eiusmod enim est sed ad ipsum sunt pariatur. Officia est nisi sed non ullamco nisi. Non labore minim magna exercitation et.\r\n\r\nDeserunt ad irure veniam sunt dolor excepteur duis labore, voluptate anim velit commodo voluptate. Culpa laboris dolor sed ipsum est sit anim. Magna occaecat consectetur consectetur consectetur. Minim reprehenderit mollit exercitation cupidatat. Et aliqua voluptate tempor exercitation incididunt nisi qui, proident occaecat tempor esse enim eu ea consectetur. Esse excepteur voluptate sunt cupidatat ullamco aute aute. Reprehenderit laboris consequat consectetur magna dolor ut exercitation exercitation. Sit consectetur commodo exercitation do fugiat elit laborum anim et. Enim incididunt dolore incididunt adipiscing ullamco aliquip id. Ex laboris nulla veniam amet. Deserunt cillum ipsum cillum enim. Id enim aute nisi. Ad culpa pariatur esse. Cillum mollit est duis dolore consequat et do. Laboris minim eiusmod nulla non ea, deserunt nisi aute proident magna consequat cillum quis, dolore labore officia ut.\r\n\r\nId elit fugiat ut cillum. Ullamco laborum dolore aliqua. Officia officia aliqua sunt deserunt eu eiusmod. Sunt consequat magna tempor sint. Eu nostrud ex id consequat consequat magna sint ipsum amet.",
+                  "reviews": 2,
+                  "rating": "3.0",
+                  "advertise": false,
+                  "ad_title": null,
+                  "ad_name": null,
+                  "ad_description": "",
+                  "new_tag": "New",
+                  "added": "2021-07-20",
+                  "updated": "2021-07-30",
+                  "status": true,
+                  "discounted_price": null
+            }
+      },
+      {
+            "model": "tour.tour",
+            "pk": 3,
+            "fields": {
+                  "tour_slug": "kampala-touring",
+                  "name": "kampala touring",
+                  "image": "tour/tours/tour_34_g3St2ZR.jpg",
+                  "destination": 2,
+                  "category": 1,
+                  "price": "5680000.00",
+                  "discount": null,
+                  "duration": 3,
+                  "description": "Reprehenderit anim enim excepteur dolor deserunt labore commodo irure. Mollit tempor cupidatat commodo magna duis ipsum sit, cillum est duis aliquip, in voluptate ad labore laborum quis. Aliqua ipsum adipiscing nostrud magna. Incididunt ea ipsum incididunt velit dolor, dolor est occaecat irure. Est eiusmod culpa culpa, ullamco commodo ipsum consequat tempor magna. Voluptate lorem commodo qui ullamco non eu ut. Incididunt eiusmod enim est sed ad ipsum sunt pariatur. Officia est nisi sed non ullamco nisi. Non labore minim magna exercitation et.\r\n\r\nDeserunt ad irure veniam sunt dolor excepteur duis labore, voluptate anim velit commodo voluptate. Culpa laboris dolor sed ipsum est sit anim. Magna occaecat consectetur consectetur consectetur. Minim reprehenderit mollit exercitation cupidatat. Et aliqua voluptate tempor exercitation incididunt nisi qui, proident occaecat tempor esse enim eu ea consectetur. Esse excepteur voluptate sunt cupidatat ullamco aute aute. Reprehenderit laboris consequat consectetur magna dolor ut exercitation exercitation. Sit consectetur commodo exercitation do fugiat elit laborum anim et. Enim incididunt dolore incididunt adipiscing ullamco aliquip id. Ex laboris nulla veniam amet. Deserunt cillum ipsum cillum enim. Id enim aute nisi. Ad culpa pariatur esse. Cillum mollit est duis dolore consequat et do. Laboris minim eiusmod nulla non ea, deserunt nisi aute proident magna consequat cillum quis, dolore labore officia ut.\r\n\r\nId elit fugiat ut cillum. Ullamco laborum dolore aliqua. Officia officia aliqua sunt deserunt eu eiusmod. Sunt consequat magna tempor sint. Eu nostrud ex id consequat consequat magna sint ipsum amet.",
+                  "reviews": 1,
+                  "rating": "2.0",
+                  "advertise": false,
+                  "ad_title": null,
+                  "ad_name": null,
+                  "ad_description": "",
+                  "new_tag": "New",
+                  "added": "2021-07-20",
+                  "updated": "2021-07-30",
+                  "status": true,
+                  "discounted_price": null
+            }
+      },
+      {
+            "model": "tour.tour",
+            "pk": 4,
+            "fields": {
+                  "tour_slug": "meseaum-visiting",
+                  "name": "meseaum visiting",
+                  "image": "tour/tours/tour_21.jpg",
+                  "destination": 2,
+                  "category": 1,
+                  "price": "434000.00",
+                  "discount": null,
+                  "duration": 2,
+                  "description": "Reprehenderit anim enim excepteur dolor deserunt labore commodo irure. Mollit tempor cupidatat commodo magna duis ipsum sit, cillum est duis aliquip, in voluptate ad labore laborum quis. Aliqua ipsum adipiscing nostrud magna. Incididunt ea ipsum incididunt velit dolor, dolor est occaecat irure. Est eiusmod culpa culpa, ullamco commodo ipsum consequat tempor magna. Voluptate lorem commodo qui ullamco non eu ut. Incididunt eiusmod enim est sed ad ipsum sunt pariatur. Officia est nisi sed non ullamco nisi. Non labore minim magna exercitation et.\r\n\r\nDeserunt ad irure veniam sunt dolor excepteur duis labore, voluptate anim velit commodo voluptate. Culpa laboris dolor sed ipsum est sit anim. Magna occaecat consectetur consectetur consectetur. Minim reprehenderit mollit exercitation cupidatat. Et aliqua voluptate tempor exercitation incididunt nisi qui, proident occaecat tempor esse enim eu ea consectetur. Esse excepteur voluptate sunt cupidatat ullamco aute aute. Reprehenderit laboris consequat consectetur magna dolor ut exercitation exercitation. Sit consectetur commodo exercitation do fugiat elit laborum anim et. Enim incididunt dolore incididunt adipiscing ullamco aliquip id. Ex laboris nulla veniam amet. Deserunt cillum ipsum cillum enim. Id enim aute nisi. Ad culpa pariatur esse. Cillum mollit est duis dolore consequat et do. Laboris minim eiusmod nulla non ea, deserunt nisi aute proident magna consequat cillum quis, dolore labore officia ut.\r\n\r\nId elit fugiat ut cillum. Ullamco laborum dolore aliqua. Officia officia aliqua sunt deserunt eu eiusmod. Sunt consequat magna tempor sint. Eu nostrud ex id consequat consequat magna sint ipsum amet.",
+                  "reviews": 1,
+                  "rating": "2.0",
+                  "advertise": false,
+                  "ad_title": null,
+                  "ad_name": null,
+                  "ad_description": "",
+                  "new_tag": "New",
+                  "added": "2021-07-20",
+                  "updated": "2021-09-08",
+                  "status": true,
+                  "discounted_price": null
+            }
+      },
+      {
+            "model": "tour.tour",
+            "pk": 5,
+            "fields": {
+                  "tour_slug": "bird-watching",
+                  "name": "bird watching",
+                  "image": "tour/tours/tour_3.jpg",
+                  "destination": 2,
+                  "category": 1,
+                  "price": "450000.00",
+                  "discount": 3,
+                  "duration": 1,
+                  "description": "Reprehenderit anim enim excepteur dolor deserunt labore commodo irure. Mollit tempor cupidatat commodo magna duis ipsum sit, cillum est duis aliquip, in voluptate ad labore laborum quis. Aliqua ipsum adipiscing nostrud magna. Incididunt ea ipsum incididunt velit dolor, dolor est occaecat irure. Est eiusmod culpa culpa, ullamco commodo ipsum consequat tempor magna. Voluptate lorem commodo qui ullamco non eu ut. Incididunt eiusmod enim est sed ad ipsum sunt pariatur. Officia est nisi sed non ullamco nisi. Non labore minim magna exercitation et.\r\n\r\nDeserunt ad irure veniam sunt dolor excepteur duis labore, voluptate anim velit commodo voluptate. Culpa laboris dolor sed ipsum est sit anim. Magna occaecat consectetur consectetur consectetur. Minim reprehenderit mollit exercitation cupidatat. Et aliqua voluptate tempor exercitation incididunt nisi qui, proident occaecat tempor esse enim eu ea consectetur. Esse excepteur voluptate sunt cupidatat ullamco aute aute. Reprehenderit laboris consequat consectetur magna dolor ut exercitation exercitation. Sit consectetur commodo exercitation do fugiat elit laborum anim et. Enim incididunt dolore incididunt adipiscing ullamco aliquip id. Ex laboris nulla veniam amet. Deserunt cillum ipsum cillum enim. Id enim aute nisi. Ad culpa pariatur esse. Cillum mollit est duis dolore consequat et do. Laboris minim eiusmod nulla non ea, deserunt nisi aute proident magna consequat cillum quis, dolore labore officia ut.\r\n\r\nId elit fugiat ut cillum. Ullamco laborum dolore aliqua. Officia officia aliqua sunt deserunt eu eiusmod. Sunt consequat magna tempor sint. Eu nostrud ex id consequat consequat magna sint ipsum amet.",
+                  "reviews": 5,
+                  "rating": "3.2",
+                  "advertise": false,
+                  "ad_title": null,
+                  "ad_name": null,
+                  "ad_description": "",
+                  "new_tag": "New",
+                  "added": "2021-07-20",
+                  "updated": "2021-07-30",
+                  "status": true,
+                  "discounted_price": null
+            }
+      },
+      {
+            "model": "tour.relatedtour",
+            "pk": 1,
+            "fields": {
+                  "tour": 1,
+                  "related_tour": 2
+            }
+      },
+      {
+            "model": "tour.relatedtour",
+            "pk": 2,
+            "fields": {
+                  "tour": 1,
+                  "related_tour": 5
+            }
+      },
+      {
+            "model": "tour.relatedtour",
+            "pk": 3,
+            "fields": {
+                  "tour": 1,
+                  "related_tour": 3
+            }
+      },
+      {
+            "model": "tour.relatedtour",
+            "pk": 4,
+            "fields": {
+                  "tour": 1,
+                  "related_tour": 4
+            }
+      },
+      {
+            "model": "tour.tourimage",
+            "pk": 1,
+            "fields": {
+                  "image": "tour/tours/tour_37.jpg",
+                  "tour": 1
+            }
+      },
+      {
+            "model": "tour.tourimage",
+            "pk": 2,
+            "fields": {
+                  "image": "tour/tours/tour_36.jpg",
+                  "tour": 1
+            }
+      },
+      {
+            "model": "tour.tourimage",
+            "pk": 3,
+            "fields": {
+                  "image": "tour/tours/tour_39.jpg",
+                  "tour": 1
+            }
+      },
+      {
+            "model": "tour.tourimage",
+            "pk": 4,
+            "fields": {
+                  "image": "tour/tours/tour_35.jpg",
+                  "tour": 1
+            }
+      },
+      {
+            "model": "tour.tourimage",
+            "pk": 5,
+            "fields": {
+                  "image": "tour/tours/tour_34_gHriTF5.jpg",
+                  "tour": 1
+            }
+      },
+      {
+            "model": "tour.tourimage",
+            "pk": 6,
+            "fields": {
+                  "image": "tour/tours/tour_38_YHyORNh.jpg",
+                  "tour": 1
+            }
+      },
+      {
+            "model": "tour.tourquestion",
+            "pk": 1,
+            "fields": {
+                  "question": "what is boat riding",
+                  "answer": "Boat riding is where one gets to roare the boat down a water stream",
+                  "tour": 1
+            }
+      },
+      {
+            "model": "tour.tourquestion",
+            "pk": 2,
+            "fields": {
+                  "question": "Do I come with my own equipment",
+                  "answer": "No,  all equimpment is at the premises",
+                  "tour": 1
+            }
+      },
+      {
+            "model": "tour.tourquestion",
+            "pk": 3,
+            "fields": {
+                  "question": "How safe is boat riding",
+                  "answer": "We take all necessary precautions to ensure your safety",
+                  "tour": 1
+            }
+      },
+      {
+            "model": "tour.tourprogram",
+            "pk": 1,
+            "fields": {
+                  "program": "Pick up from pickup address",
+                  "duration": 1,
+                  "description": "dcd hc dvcdfvj dfvhdbfjv dfvdfv dfj",
+                  "tour": 1
+            }
+      },
+      {
+            "model": "tour.tourprogram",
+            "pk": 2,
+            "fields": {
+                  "program": "Basic learning",
+                  "duration": 2,
+                  "description": "edyfuwefver ferfberhj ferfgbveryfuer feuerfuer ferfbery",
+                  "tour": 1
+            }
+      },
+      {
+            "model": "tour.tourprogram",
+            "pk": 3,
+            "fields": {
+                  "program": "boating riding basics",
+                  "duration": 3,
+                  "description": "egfud efver ferfbjer hferjhff rhejfbejr erhfbje rfherj ferh fe",
+                  "tour": 1
+            }
+      },
+      {
+            "model": "tour.tourprogram",
+            "pk": 4,
+            "fields": {
+                  "program": "climax boat riding",
+                  "duration": 4,
+                  "description": "fyf erfbre fgref rhfgbrj fgrhbfgj trghjr tgtrh gtrg rtjg rhg frhg trjgr",
+                  "tour": 1
+            }
+      },
+      {
+            "model": "tour.tourprogram",
+            "pk": 5,
+            "fields": {
+                  "program": "drop off to drop off address",
+                  "duration": 5,
+                  "description": "erf erfrej ferj frhefj erhg frh frhe fjehrjf erf erh",
+                  "tour": 1
+            }
+      },
+      {
+            "model": "tour.tourinclusion",
+            "pk": 1,
+            "fields": {
+                  "inclusion": "massage palour",
+                  "description": "vhdfbj vdfhbvdfjv",
+                  "tour": 1
+            }
+      },
+      {
+            "model": "tour.tourinclusion",
+            "pk": 2,
+            "fields": {
+                  "inclusion": "sauna",
+                  "description": "b bhbjhfv hfbvhdfj vhdf",
+                  "tour": 1
+            }
+      },
+      {
+            "model": "tour.tourinclusion",
+            "pk": 3,
+            "fields": {
+                  "inclusion": "evening walk",
+                  "description": "dgvchd fvhdfghcd fgvcdfhc",
+                  "tour": 1
+            }
+      },
+      {
+            "model": "tour.tourinsight",
+            "pk": 1,
+            "fields": {
+                  "insight": "picnic",
+                  "description": "cvhdfbvjd vdfbvjhf",
+                  "tour": 1
+            }
+      },
+      {
+            "model": "tour.tourinsight",
+            "pk": 2,
+            "fields": {
+                  "insight": "barbquee",
+                  "description": "gfhsd dcvdf hdfv dfhvjdf vdfbvj dfv dfv vfdhdf hvgdfbhvdf",
+                  "tour": 1
+            }
+      },
+      {
+            "model": "tour.tourbooking",
+            "pk": 1,
+            "fields": {
+                  "tour": 1,
+                  "customer": 54,
+                  "booking_date": "2021-09-08",
+                  "arrival_date": "2021-09-10",
+                  "tour_start_date": "2021-09-17",
+                  "pickup_address": "airport",
+                  "dropoff_address": "airport",
+                  "adults": 2,
+                  "children": 0,
+                  "extra_info": "",
+                  "status": false
+            }
+      },
+      {
+            "model": "tour.tourbooking",
+            "pk": 2,
+            "fields": {
+                  "tour": 2,
+                  "customer": 54,
+                  "booking_date": "2021-09-08",
+                  "arrival_date": "2021-09-08",
+                  "tour_start_date": "2021-09-23",
+                  "pickup_address": "Kisase,Kampala",
+                  "dropoff_address": "kisaasi",
+                  "adults": 6,
+                  "children": 1,
+                  "extra_info": "",
+                  "status": false
+            }
+      },
+      {
+            "model": "blog.blogcategory",
+            "pk": 1,
+            "fields": {
+                  "blog_category_slug": "post-travel-article",
+                  "name": "post travel article",
+                  "image": "blog/categories/tour_34.jpg",
+                  "description": null,
+                  "status": true
+            }
+      },
+      {
+            "model": "blog.blogcategory",
+            "pk": 2,
+            "fields": {
+                  "blog_category_slug": "pre-travel-articles",
+                  "name": "pre travel articles",
+                  "image": "blog/categories/tour_38.jpg",
+                  "description": null,
+                  "status": true
+            }
+      },
+      {
+            "model": "blog.blogcategory",
+            "pk": 3,
+            "fields": {
+                  "blog_category_slug": "safety-and-precautions",
+                  "name": "safety and precautions",
+                  "image": "blog/categories/tour_36.jpg",
+                  "description": null,
+                  "status": true
+            }
+      },
+      {
+            "model": "blog.blogcategory",
+            "pk": 4,
+            "fields": {
+                  "blog_category_slug": "travel-equipment",
+                  "name": "travel equipment",
+                  "image": "blog/categories/tour_39.jpg",
+                  "description": null,
+                  "status": true
+            }
+      },
+      {
+            "model": "blog.blogarticle",
+            "pk": 1,
+            "fields": {
+                  "article_slug": "pack-wisely-before-travelling",
+                  "article_title": "pack wisely before travelling",
+                  "image": "blog/articles/tour_34.jpg",
+                  "category": 1,
+                  "article_intro": "Elit sit ipsum ut culpa aliqua dolor esse nisi. Aliqua minim deserunt cupidatat aute occaecat nulla minim eiusmod. Consequat exercitation et et dolor",
+                  "article": "Cillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad consectetur id quis. Ipsum sit laborum nisi eu. Dolore do aute eu ipsum lorem. Velit voluptate sunt magna qui, commodo aute esse enim aliquip. Nostrud magna mollit id id tempor nisi. Elit irure velit labore.\r\n\r\nVeniam esse sunt cupidatat est veniam sunt aute lorem. Mollit fugiat excepteur est ex labore lorem excepteur eu amet. Magna aliqua lorem proident lorem aliqua, ut eiusmod irure esse in occaecat excepteur officia elit in. Adipiscing sint cillum cupidatat dolore, excepteur laboris adipiscing fugiat. Occaecat nisi consectetur fugiat cupidatat labore do amet sunt, ipsum mollit ipsum et.\r\n\r\nDuis laboris velit quis enim. Voluptate elit in commodo incididunt labore non aliquip. Incididunt veniam irure et non cillum sint cillum. Pariatur labore proident irure, minim nostrud sint reprehenderit magna id magna velit. Proident dolor qui irure duis labore, commodo enim elit laborum aliquip. Proident proident sit amet irure eiusmod. Consectetur minim incididunt eu deserunt proident cupidatat laboris, officia excepteur commodo et culpa esse culpa laboris dolor laboris, laborum cillum nostrud enim cupidatat ea laboris mollit culpa quis. Aute culpa laborum proident duis est in do cupidatat id. Excepteur laborum ex aliqua consectetur et fugiat, reprehenderit id pariatur consequat aute dolor elit excepteur voluptate mollit. Ipsum in esse ea ullamco veniam id. Adipiscing sunt non cillum nisi ad id voluptate est consequat. Sunt id excepteur dolore fugiat nulla fugiat amet do. Mollit velit laboris sed exercitation ex. Labore deserunt aliqua labore et laborum sunt irure.\r\n\r\nCommodo excepteur officia minim ex sint nostrud, sed sed excepteur eu nisi anim laborum nostrud, eu eu ad id mollit ea. Quis ex nostrud aliquip reprehenderit laboris occaecat eiusmod, dolor in esse labore non dolore id, irure ipsum do eu exercitation commodo ad. Adipiscing ipsum est eiusmod, exercitation est do occaecat sint voluptate, sed nostrud mollit irure qui duis consectetur enim eu. Sed non eiusmod mollit ipsum. Velit veniam qui in nisi cillum laboris qui, do consequat aliqua in eiusmod.\r\n\r\nSed aliquip fugiat excepteur elit do labore quis duis, veniam mollit elit amet duis incididunt laboris voluptate pariatur adipiscing. Fugiat nostrud reprehenderit officia sunt ex lorem duis est tempor. Mollit quis nulla reprehenderit deserunt in incididunt. Sed est lorem enim elit anim pariatur. Ea sed quis nisi lorem. Sint dolore incididunt aute, ipsum in esse culpa ex sint proident culpa officia. Sed pariatur sed veniam sed magna. Amet est commodo velit. Sint ipsum minim dolore reprehenderit pariatur. Exercitation incididunt aliqua ullamco sunt.",
+                  "publish_date": "2021-07-20",
+                  "status": true
+            }
+      },
+      {
+            "model": "blog.blogarticle",
+            "pk": 2,
+            "fields": {
+                  "article_slug": "how-to-maintain-your-health-while-on-tour",
+                  "article_title": "how to maintain your health while on tour",
+                  "image": "blog/articles/tour_30.jpg",
+                  "category": 2,
+                  "article_intro": "Laboris reprehenderit ullamco qui sit eiusmod cillum est voluptate. Sunt dolor anim tempor adipiscing do occaecat sunt nisi nulla. Id sunt minim magn",
+                  "article": "Cillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad consectetur id quis. Ipsum sit laborum nisi eu. Dolore do aute eu ipsum lorem. Velit voluptate sunt magna qui, commodo aute esse enim aliquip. Nostrud magna mollit id id tempor nisi. Elit irure velit labore.\r\n\r\nVeniam esse sunt cupidatat est veniam sunt aute lorem. Mollit fugiat excepteur est ex labore lorem excepteur eu amet. Magna aliqua lorem proident lorem aliqua, ut eiusmod irure esse in occaecat excepteur officia elit in. Adipiscing sint cillum cupidatat dolore, excepteur laboris adipiscing fugiat. Occaecat nisi consectetur fugiat cupidatat labore do amet sunt, ipsum mollit ipsum et.\r\n\r\nDuis laboris velit quis enim. Voluptate elit in commodo incididunt labore non aliquip. Incididunt veniam irure et non cillum sint cillum. Pariatur labore proident irure, minim nostrud sint reprehenderit magna id magna velit. Proident dolor qui irure duis labore, commodo enim elit laborum aliquip. Proident proident sit amet irure eiusmod. Consectetur minim incididunt eu deserunt proident cupidatat laboris, officia excepteur commodo et culpa esse culpa laboris dolor laboris, laborum cillum nostrud enim cupidatat ea laboris mollit culpa quis. Aute culpa laborum proident duis est in do cupidatat id. Excepteur laborum ex aliqua consectetur et fugiat, reprehenderit id pariatur consequat aute dolor elit excepteur voluptate mollit. Ipsum in esse ea ullamco veniam id. Adipiscing sunt non cillum nisi ad id voluptate est consequat. Sunt id excepteur dolore fugiat nulla fugiat amet do. Mollit velit laboris sed exercitation ex. Labore deserunt aliqua labore et laborum sunt irure.\r\n\r\nCommodo excepteur officia minim ex sint nostrud, sed sed excepteur eu nisi anim laborum nostrud, eu eu ad id mollit ea. Quis ex nostrud aliquip reprehenderit laboris occaecat eiusmod, dolor in esse labore non dolore id, irure ipsum do eu exercitation commodo ad. Adipiscing ipsum est eiusmod, exercitation est do occaecat sint voluptate, sed nostrud mollit irure qui duis consectetur enim eu. Sed non eiusmod mollit ipsum. Velit veniam qui in nisi cillum laboris qui, do consequat aliqua in eiusmod.\r\n\r\nSed aliquip fugiat excepteur elit do labore quis duis, veniam mollit elit amet duis incididunt laboris voluptate pariatur adipiscing. Fugiat nostrud reprehenderit officia sunt ex lorem duis est tempor. Mollit quis nulla reprehenderit deserunt in incididunt. Sed est lorem enim elit anim pariatur. Ea sed quis nisi lorem. Sint dolore incididunt aute, ipsum in esse culpa ex sint proident culpa officia. Sed pariatur sed veniam sed magna. Amet est commodo velit. Sint ipsum minim dolore reprehenderit pariatur. Exercitation incididunt aliqua ullamco sunt.",
+                  "publish_date": "2021-07-20",
+                  "status": true
+            }
+      },
+      {
+            "model": "blog.blogarticle",
+            "pk": 3,
+            "fields": {
+                  "article_slug": "how-to-select-the-best-tour",
+                  "article_title": "how to select the best tour",
+                  "image": "blog/articles/tour_40.jpg",
+                  "category": 3,
+                  "article_intro": "Laboris reprehenderit ullamco qui sit eiusmod cillum est voluptate. Sunt dolor anim tempor adipiscing do occaecat sunt nisi nulla. Id sunt minim magn",
+                  "article": "Minim consequat mollit ex excepteur ut elit ullamco laborum. Sed cillum anim incididunt anim eiusmod adipiscing. Magna aliqua culpa mollit excepteur enim proident. Dolore laborum tempor occaecat ad eu mollit ex voluptate irure. Esse sunt non mollit est.\r\n\r\nVeniam voluptate aute sint in laborum mollit reprehenderit minim. Nulla occaecat deserunt commodo ea sunt mollit exercitation magna. In eu mollit eu proident. Occaecat in velit sunt. Consequat do laborum esse ipsum exercitation occaecat, occaecat nulla nostrud anim, nulla officia amet sed amet est aliquip pariatur. Laborum aute pariatur fugiat aliqua laborum. Sunt ut mollit labore lorem do occaecat. Ad fugiat veniam nulla laborum consequat aliqua culpa. Consectetur cupidatat sunt lorem officia.\r\n\r\nConsectetur lorem dolor voluptate amet tempor et minim, laborum nulla pariatur magna ea quis amet velit. Aliquip anim lorem voluptate laboris, sint reprehenderit magna reprehenderit mollit in ad. Consectetur do esse esse sed lorem labore in. Mollit anim incididunt dolore eiusmod labore cillum. Aliqua ut laborum ut velit. Aute minim eu commodo qui tempor laborum adipiscing quis proident. Consequat proident voluptate laboris dolore reprehenderit pariatur minim minim eu. Cillum cillum id laborum. Sit irure ea est dolor duis tempor. Amet amet proident ullamco culpa. Deserunt sit ex dolor exercitation sed lorem ut, commodo ex eu mollit mollit est lorem commodo veniam. Officia sed in qui. Mollit consectetur quis qui reprehenderit tempor sint. Adipiscing non ea cillum lorem duis ad officia amet sit.\r\n\r\nSunt cupidatat ipsum est irure amet ullamco tempor, voluptate fugiat ex sed aute, mollit dolor dolore proident fugiat veniam veniam qui veniam sed. Aliqua aute minim adipiscing veniam non magna adipiscing quis dolor. Non eiusmod qui nulla. Consectetur ex sed dolore dolor exercitation consectetur lorem, labore nulla ex ipsum. Labore nulla do aute ipsum. Consectetur deserunt culpa ut. Officia consequat qui velit qui, duis adipiscing ut exercitation, exercitation ullamco irure eu eu in laboris officia proident sunt. Enim nulla id et veniam dolore voluptate, do cillum voluptate eu tempor sint, dolor dolore sed ad. In velit consequat proident reprehenderit culpa consectetur ut nulla. Velit deserunt aliqua ullamco consectetur adipiscing et reprehenderit aliquip dolor. Ut officia quis quis fugiat quis proident tempor eiusmod pariatur. Velit commodo deserunt laborum minim. Quis sed fugiat et. Reprehenderit aliqua mollit id officia ut et magna ex.\r\n\r\nNulla dolore eu in amet anim. Nostrud nisi ex dolore dolore enim sunt elit. Dolore non incididunt nostrud reprehenderit nulla elit. Cupidatat cupidatat aliqua in. In in cupidatat non do quis aliqua laboris, laborum consectetur irure enim consequat minim ea laboris. Aliquip officia voluptate reprehenderit, mollit proident cillum cupidatat veniam non. Esse exercitation cillum sunt ipsum officia, dolor elit deserunt id reprehenderit minim id proident minim nisi, nisi reprehenderit velit sunt et aute mollit. Reprehenderit lorem tempor consequat ut officia mollit deserunt qui. Ex et id velit irure cillum.",
+                  "publish_date": "2021-07-20",
+                  "status": true
+            }
+      },
+      {
+            "model": "blog.blogarticle",
+            "pk": 4,
+            "fields": {
+                  "article_slug": "aticle-one",
+                  "article_title": "aticle one",
+                  "image": "blog/articles/vincent-guth-uhoILl3HUZM-unsplash_copy.jpg",
+                  "category": 1,
+                  "article_intro": "Cillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim d",
+                  "article": "Cillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad consectetur id quis. Ipsum sit laborum nisi eu. Dolore do aute eu ipsum lorem. Velit voluptate sunt magna qui, commodo aute esse enim aliquip. Nostrud magna mollit id id tempor nisi. Elit irure velit labore.\r\n\r\nVeniam esse sunt cupidatat est veniam sunt aute lorem. Mollit fugiat excepteur est ex labore lorem excepteur eu amet. Magna aliqua lorem proident lorem aliqua, ut eiusmod irure esse in occaecat excepteur officia elit in. Adipiscing sint cillum cupidatat dolore, excepteur laboris adipiscing fugiat. Occaecat nisi consectetur fugiat cupidatat labore do amet sunt, ipsum mollit ipsum et.\r\n\r\nDuis laboris velit quis enim. Voluptate elit in commodo incididunt labore non aliquip. Incididunt veniam irure et non cillum sint cillum. Pariatur labore proident irure, minim nostrud sint reprehenderit magna id magna velit. Proident dolor qui irure duis labore, commodo enim elit laborum aliquip. Proident proident sit amet irure eiusmod. Consectetur minim incididunt eu deserunt proident cupidatat laboris, officia excepteur commodo et culpa esse culpa laboris dolor laboris, laborum cillum nostrud enim cupidatat ea laboris mollit culpa quis. Aute culpa laborum proident duis est in do cupidatat id. Excepteur laborum ex aliqua consectetur et fugiat, reprehenderit id pariatur consequat aute dolor elit excepteur voluptate mollit. Ipsum in esse ea ullamco veniam id. Adipiscing sunt non cillum nisi ad id voluptate est consequat. Sunt id excepteur dolore fugiat nulla fugiat amet do. Mollit velit laboris sed exercitation ex. Labore deserunt aliqua labore et laborum sunt irure.\r\n\r\nCommodo excepteur officia minim ex sint nostrud, sed sed excepteur eu nisi anim laborum nostrud, eu eu ad id mollit ea. Quis ex nostrud aliquip reprehenderit laboris occaecat eiusmod, dolor in esse labore non dolore id, irure ipsum do eu exercitation commodo ad. Adipiscing ipsum est eiusmod, exercitation est do occaecat sint voluptate, sed nostrud mollit irure qui duis consectetur enim eu. Sed non eiusmod mollit ipsum. Velit veniam qui in nisi cillum laboris qui, do consequat aliqua in eiusmod.\r\n\r\nSed aliquip fugiat excepteur elit do labore quis duis, veniam mollit elit amet duis incididunt laboris voluptate pariatur adipiscing. Fugiat nostrud reprehenderit officia sunt ex lorem duis est tempor. Mollit quis nulla reprehenderit deserunt in incididunt. Sed est lorem enim elit anim pariatur. Ea sed quis nisi lorem. Sint dolore incididunt aute, ipsum in esse culpa ex sint proident culpa officia. Sed pariatur sed veniam sed magna. Amet est commodo velit. Sint ipsum minim dolore reprehenderit pariatur. Exercitation incididunt aliqua ullamco sunt.",
+                  "publish_date": "2021-07-23",
+                  "status": true
+            }
+      },
+      {
+            "model": "blog.blogarticle",
+            "pk": 5,
+            "fields": {
+                  "article_slug": "article-two",
+                  "article_title": "article two",
+                  "image": "blog/articles/shifaaz-shamoon-oR0uERTVyD0-unsplash.jpg",
+                  "category": 1,
+                  "article_intro": "Cillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim d",
+                  "article": "Cillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\n\r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\n\r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\n\r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\n\r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad",
+                  "publish_date": "2021-07-23",
+                  "status": true
+            }
+      },
+      {
+            "model": "blog.blogarticle",
+            "pk": 6,
+            "fields": {
+                  "article_slug": "article-three",
+                  "article_title": "article three",
+                  "image": "blog/articles/peter-jan-rijpkema-wI6o8OwUwdw-unsplash.jpg",
+                  "category": 2,
+                  "article_intro": "Cillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim d",
+                  "article": "Cillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\n\r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\n\r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\n\r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad",
+                  "publish_date": "2021-07-23",
+                  "status": true
+            }
+      },
+      {
+            "model": "blog.blogarticle",
+            "pk": 7,
+            "fields": {
+                  "article_slug": "article-four",
+                  "article_title": "article four",
+                  "image": "blog/articles/matt-nelson-bx4WS8mhz3w-unsplash.jpg",
+                  "category": 3,
+                  "article_intro": "Cillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim d",
+                  "article": "Cillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\n\r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\n\r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad \r\n\r\nCillum enim commodo magna culpa irure veniam excepteur do est. Consequat commodo sed pariatur, dolore nostrud pariatur labore commodo cupidatat anim dolor laboris. Eiusmod consectetur ad",
+                  "publish_date": "2021-07-23",
+                  "status": true
+            }
+      },
+      {
+            "model": "blog.blogarticle",
+            "pk": 8,
+            "fields": {
+                  "article_slug": "article-five",
+                  "article_title": "article five",
+                  "image": "blog/articles/oliver-niblett-qGGBcLDsUtQ-unsplash.jpg",
+                  "category": 3,
+                  "article_intro": "Minim consequat mollit ex excepteur ut elit ullamco laborum. Sed cillum anim incididunt anim eiusmod adipiscing. Magna aliqua culpa mollit excepteur e",
+                  "article": "Minim consequat mollit ex excepteur ut elit ullamco laborum. Sed cillum anim incididunt anim eiusmod adipiscing. Magna aliqua culpa mollit excepteur enim proident. Dolore laborum tempor occaecat ad eu mollit ex voluptate irure. Esse sunt non mollit est.\r\n\r\nVeniam voluptate aute sint in laborum mollit reprehenderit minim. Nulla occaecat deserunt commodo ea sunt mollit exercitation magna. In eu mollit eu proident. Occaecat in velit sunt. Consequat do laborum esse ipsum exercitation occaecat, occaecat nulla nostrud anim, nulla officia amet sed amet est aliquip pariatur. Laborum aute pariatur fugiat aliqua laborum. Sunt ut mollit labore lorem do occaecat. Ad fugiat veniam nulla laborum consequat aliqua culpa. Consectetur cupidatat sunt lorem officia.\r\n\r\nConsectetur lorem dolor voluptate amet tempor et minim, laborum nulla pariatur magna ea quis amet velit. Aliquip anim lorem voluptate laboris, sint reprehenderit magna reprehenderit mollit in ad. Consectetur do esse esse sed lorem labore in. Mollit anim incididunt dolore eiusmod labore cillum. Aliqua ut laborum ut velit. Aute minim eu commodo qui tempor laborum adipiscing quis proident. Consequat proident voluptate laboris dolore reprehenderit pariatur minim minim eu. Cillum cillum id laborum. Sit irure ea est dolor duis tempor. Amet amet proident ullamco culpa. Deserunt sit ex dolor exercitation sed lorem ut, commodo ex eu mollit mollit est lorem commodo veniam. Officia sed in qui. Mollit consectetur quis qui reprehenderit tempor sint. Adipiscing non ea cillum lorem duis ad officia amet sit.\r\n\r\nSunt cupidatat ipsum est irure amet ullamco tempor, voluptate fugiat ex sed aute, mollit dolor dolore proident fugiat veniam veniam qui veniam sed. Aliqua aute minim adipiscing veniam non magna adipiscing quis dolor. Non eiusmod qui nulla. Consectetur ex sed dolore dolor exercitation consectetur lorem, labore nulla ex ipsum. Labore nulla do aute ipsum. Consectetur deserunt culpa ut. Officia consequat qui velit qui, duis adipiscing ut exercitation, exercitation ullamco irure eu eu in laboris officia proident sunt. Enim nulla id et veniam dolore voluptate, do cillum voluptate eu tempor sint, dolor dolore sed ad. In velit consequat proident reprehenderit culpa consectetur ut nulla. Velit deserunt aliqua ullamco consectetur adipiscing et reprehenderit aliquip dolor. Ut officia quis quis fugiat quis proident tempor eiusmod pariatur. Velit commodo deserunt laborum minim. Quis sed fugiat et. Reprehenderit aliqua mollit id officia ut et magna ex.\r\n\r\nNulla dolore eu in amet anim. Nostrud nisi ex dolore dolore enim sunt elit. Dolore non incididunt nostrud reprehenderit nulla elit. Cupidatat cupidatat aliqua in. In in cupidatat non do quis aliqua laboris, laborum consectetur irure enim consequat minim ea laboris. Aliquip officia voluptate reprehenderit, mollit proident cillum cupidatat veniam non. Esse exercitation cillum sunt ipsum officia, dolor elit deserunt id reprehenderit minim id proident minim nisi, nisi reprehenderit velit sunt et aute mollit. Reprehenderit lorem tempor consequat ut officia mollit deserunt qui. Ex et id velit irure cillum.",
+                  "publish_date": "2021-07-23",
+                  "status": true
+            }
+      },
+      {
+            "model": "blog.blogarticle",
+            "pk": 9,
+            "fields": {
+                  "article_slug": "article-six",
+                  "article_title": "article six",
+                  "image": "blog/articles/lerone-pieters-7Q7nmszXoZk-unsplash.jpg",
+                  "category": 2,
+                  "article_intro": "Minim consequat mollit ex excepteur ut elit ullamco laborum. Sed cillum anim incididunt anim eiusmod adipiscing. Magna aliqua culpa mollit excepteur e\r\nVeniam voluptate aute sint in laborum mollit reprehenderit minim. Nulla occaecat deserunt commodo ea sunt mollit exercitation magna. In eu mollit eu proident. Occaecat in velit sunt. Consequat do laborum esse ipsum exercitation occaecat, occaecat nulla nostrud anim, nulla officia amet sed amet est aliquip pariatur. Laborum aute pariatur fugiat aliqua laborum. Sunt ut mollit labore lorem do occaecat. Ad fugiat veniam nulla laborum consequat aliqua culpa. Consectetur cupidatat sunt lorem officia.\r\nVeniam voluptate aute sint in laborum mollit reprehenderit minim. Nulla occaecat deserunt commodo ea sunt mollit exercitation magna. In eu mollit eu proident. Occaecat in velit sunt. Consequat do laborum esse ipsum exercitation occaecat, occaecat",
+                  "article": "Minim consequat mollit ex excepteur ut elit ullamco laborum. Sed cillum anim incididunt anim eiusmod adipiscing. Magna aliqua culpa mollit excepteur enim proident. Dolore laborum tempor occaecat ad eu mollit ex voluptate irure. Esse sunt non mollit est.\r\n\r\nVeniam voluptate aute sint in laborum mollit reprehenderit minim. Nulla occaecat deserunt commodo ea sunt mollit exercitation magna. In eu mollit eu proident. Occaecat in velit sunt. Consequat do laborum esse ipsum exercitation occaecat, occaecat nulla nostrud anim, nulla officia amet sed amet est aliquip pariatur. Laborum aute pariatur fugiat aliqua laborum. Sunt ut mollit labore lorem do occaecat. Ad fugiat veniam nulla laborum consequat aliqua culpa. Consectetur cupidatat sunt lorem officia.\r\nMinim consequat mollit ex excepteur ut elit ullamco laborum. Sed cillum anim incididunt anim eiusmod adipiscing. Magna aliqua culpa mollit excepteur enim proident. Dolore laborum tempor occaecat ad eu mollit ex voluptate irure. Esse sunt non mollit est.\r\n\r\nVeniam voluptate aute sint in laborum mollit reprehenderit minim. Nulla occaecat deserunt commodo ea sunt mollit exercitation magna. In eu mollit eu proident. Occaecat in velit sunt. Consequat do laborum esse ipsum exercitation occaecat, occaecat nulla nostrud anim, nulla officia amet sed amet est aliquip pariatur. Laborum aute pariatur fugiat aliqua laborum. Sunt ut mollit labore lorem do occaecat. Ad fugiat veniam nulla laborum consequat aliqua culpa. Consectetur cupidatat sunt lorem officia.\r\n\r\nMinim consequat mollit ex excepteur ut elit ullamco laborum. Sed cillum anim incididunt anim eiusmod adipiscing. Magna aliqua culpa mollit excepteur enim proident. Dolore laborum tempor occaecat ad eu mollit ex voluptate irure. Esse sunt non mollit est.\r\n\r\nVeniam voluptate aute sint in laborum mollit reprehenderit minim. Nulla occaecat deserunt commodo ea sunt mollit exercitation magna. In eu mollit eu proident. Occaecat in velit sunt. Consequat do laborum esse ipsum exercitation occaecat, occaecat nulla nostrud anim, nulla officia amet sed amet est aliquip pariatur. Laborum aute pariatur fugiat aliqua laborum. Sunt ut mollit labore lorem do occaecat. Ad fugiat veniam nulla laborum consequat aliqua culpa. Consectetur cupidatat sunt lorem officia.\r\n\r\nMinim consequat mollit ex excepteur ut elit ullamco laborum. Sed cillum anim incididunt anim eiusmod adipiscing. Magna aliqua culpa mollit excepteur enim proident. Dolore laborum tempor occaecat ad eu mollit ex voluptate irure. Esse sunt non mollit est.\r\n\r\nVeniam voluptate aute sint in laborum mollit reprehenderit minim. Nulla occaecat deserunt commodo ea sunt mollit exercitation magna. In eu mollit eu proident. Occaecat in velit sunt. Consequat do laborum esse ipsum exercitation occaecat, occaecat nulla nostrud anim, nulla officia amet sed amet est aliquip pariatur. Laborum aute pariatur fugiat aliqua laborum. Sunt ut mollit labore lorem do occaecat. Ad fugiat veniam nulla laborum consequat aliqua culpa. Consectetur cupidatat sunt lorem officia.\r\nMinim consequat mollit ex excepteur ut elit ullamco laborum. Sed cillum anim incididunt anim eiusmod adipiscing. Magna aliqua culpa mollit excepteur enim proident. Dolore laborum tempor occaecat ad eu mollit ex voluptate irure. Esse sunt non mollit est.\r\n\r\nVeniam voluptate aute sint in laborum mollit reprehenderit minim. Nulla occaecat deserunt commodo ea sunt mollit exercitation magna. In eu mollit eu proident. Occaecat in velit sunt. Consequat do laborum esse ipsum exercitation occaecat, occaecat nulla nostrud anim, nulla officia amet sed amet est aliquip pariatur. Laborum aute pariatur fugiat aliqua laborum. Sunt ut mollit labore lorem do occaecat. Ad fugiat veniam nulla laborum consequat aliqua culpa. Consectetur cupidatat sunt lorem officia.\r\n\r\nMinim consequat mollit ex excepteur ut elit ullamco laborum. Sed cillum anim incididunt anim eiusmod adipiscing. Magna aliqua culpa mollit excepteur enim proident. Dolore laborum tempor occaecat ad eu mollit ex voluptate irure. Esse sunt non mollit est.\r\n\r\nVeniam voluptate aute sint in laborum mollit reprehenderit minim. Nulla occaecat deserunt commodo ea sunt mollit exercitation magna. In eu mollit eu proident. Occaecat in velit sunt. Consequat do laborum esse ipsum exercitation occaecat, occaecat nulla nostrud anim, nulla officia amet sed amet est aliquip pariatur. Laborum aute pariatur fugiat aliqua laborum. Sunt ut mollit labore lorem do occaecat. Ad fugiat veniam nulla laborum consequat aliqua culpa. Consectetur cupidatat sunt lorem officia.",
+                  "publish_date": "2021-07-24",
+                  "status": true
+            }
+      },
+      {
+            "model": "blog.blogarticle",
+            "pk": 10,
+            "fields": {
+                  "article_slug": "article-seven",
+                  "article_title": "article seven",
+                  "image": "blog/articles/leo-rivas-OR_3rbIv5yI-unsplash.jpg",
+                  "category": 2,
+                  "article_intro": "Minim consequat mollit ex excepteur ut elit ullamco laborum. Sed cillum anim incididunt anim eiusmod adipiscing. Magna aliqua culpa mollit excepteur e",
+                  "article": "Minim consequat mollit ex excepteur ut elit ullamco laborum. Sed cillum anim incididunt anim eiusmod adipiscing. Magna aliqua culpa mollit excepteur enim proident. Dolore laborum tempor occaecat ad eu mollit ex voluptate irure. Esse sunt non mollit est.\r\n\r\nVeniam voluptate aute sint in laborum mollit reprehenderit minim. Nulla occaecat deserunt commodo ea sunt mollit exercitation magna. In eu mollit eu proident. Occaecat in velit sunt. Consequat do laborum esse ipsum exercitation occaecat, occaecat nulla nostrud anim, nulla officia amet sed amet est aliquip pariatur. Laborum aute pariatur fugiat aliqua laborum. Sunt ut mollit labore lorem do occaecat. Ad fugiat veniam nulla laborum consequat aliqua culpa. Consectetur cupidatat sunt lorem officia.\r\n\r\nMinim consequat mollit ex excepteur ut elit ullamco laborum. Sed cillum anim incididunt anim eiusmod adipiscing. Magna aliqua culpa mollit excepteur enim proident. Dolore laborum tempor occaecat ad eu mollit ex voluptate irure. Esse sunt non mollit est.\r\n\r\nVeniam voluptate aute sint in laborum mollit reprehenderit minim. Nulla occaecat deserunt commodo ea sunt mollit exercitation magna. In eu mollit eu proident. Occaecat in velit sunt. Consequat do laborum esse ipsum exercitation occaecat, occaecat nulla nostrud anim, nulla officia amet sed amet est aliquip pariatur. Laborum aute pariatur fugiat aliqua laborum. Sunt ut mollit labore lorem do occaecat. Ad fugiat veniam nulla laborum consequat aliqua culpa. Consectetur cupidatat sunt lorem officia.\r\n\r\nMinim consequat mollit ex excepteur ut elit ullamco laborum. Sed cillum anim incididunt anim eiusmod adipiscing. Magna aliqua culpa mollit excepteur enim proident. Dolore laborum tempor occaecat ad eu mollit ex voluptate irure. Esse sunt non mollit est.\r\n\r\nVeniam voluptate aute sint in laborum mollit reprehenderit minim. Nulla occaecat deserunt commodo ea sunt mollit exercitation magna. In eu mollit eu proident. Occaecat in velit sunt. Consequat do laborum esse ipsum exercitation occaecat, occaecat nulla nostrud anim, nulla officia amet sed amet est aliquip pariatur. Laborum aute pariatur fugiat aliqua laborum. Sunt ut mollit labore lorem do occaecat. Ad fugiat veniam nulla laborum consequat aliqua culpa. Consectetur cupidatat sunt lorem officia.\r\n\r\nMinim consequat mollit ex excepteur ut elit ullamco laborum. Sed cillum anim incididunt anim eiusmod adipiscing. Magna aliqua culpa mollit excepteur enim proident. Dolore laborum tempor occaecat ad eu mollit ex voluptate irure. Esse sunt non mollit est.\r\n\r\nVeniam voluptate aute sint in laborum mollit reprehenderit minim. Nulla occaecat deserunt commodo ea sunt mollit exercitation magna. In eu mollit eu proident. Occaecat in velit sunt. Consequat do laborum esse ipsum exercitation occaecat, occaecat nulla nostrud anim, nulla officia amet sed amet est aliquip pariatur. Laborum aute pariatur fugiat aliqua laborum. Sunt ut mollit labore lorem do occaecat. Ad fugiat veniam nulla laborum consequat aliqua culpa. Consectetur cupidatat sunt lorem officia.\r\n\r\nMinim consequat mollit ex excepteur ut elit ullamco laborum. Sed cillum anim incididunt anim eiusmod adipiscing. Magna aliqua culpa mollit excepteur enim proident. Dolore laborum tempor occaecat ad eu mollit ex voluptate irure. Esse sunt non mollit est.\r\n\r\nVeniam voluptate aute sint in laborum mollit reprehenderit minim. Nulla occaecat deserunt commodo ea sunt mollit exercitation magna. In eu mollit eu proident. Occaecat in velit sunt. Consequat do laborum esse ipsum exercitation occaecat, occaecat nulla nostrud anim, nulla officia amet sed amet est aliquip pariatur. Laborum aute pariatur fugiat aliqua laborum. Sunt ut mollit labore lorem do occaecat. Ad fugiat veniam nulla laborum consequat aliqua culpa. Consectetur cupidatat sunt lorem officia.",
+                  "publish_date": "2021-07-23",
+                  "status": true
+            }
+      }
+]

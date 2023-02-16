@@ -1,0 +1,67 @@
+{% load i18n  static crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{site_title}}</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'system/css/login.css' %}">
+
+    <script src="https://kit.fontawesome.com/6a4a7feddb.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        .alert{
+            padding: 0 8px;
+        
+        }
+        .alert ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+        }  
+    </style>
+   
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row login-header">
+        <div class="col-12 py-0">
+            {% if site_obj.logo %}
+                <img src="{{site_obj.logo.url}}" width="30" height="30">
+                {% else %}
+                <img src="" width="30" height="30">
+            {% endif %}          
+            {{site_obj.company_name|title}}  
+        </div>
+    </div>
+    <div class="container">
+    <div class="login-wrapper row d-flex justify-content-center align-items-center">
+        <div class="col-12 col-md-4 mx-auto">
+            <div class="card p-2">
+                <div class="card-header">
+                    <div class="card-title text-center">Login</div>
+                </div>
+                <div class="crad-body">
+                <form class="mb-2" method="post">
+                    {% csrf_token %}
+                    {{form|crispy}}    
+                    <div class="form-group mt-2">
+                        <button type="submit" class="btn btn-primary btn-medium btn-block w-100">Login</button>
+                    </div>        
+                </form>
+                
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+    
+</body>
+</html>

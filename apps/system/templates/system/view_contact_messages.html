@@ -1,0 +1,41 @@
+{% extends 'view.html' %}
+{% load i18n static %}
+
+{% block breadcrumbs %}{{ block.super }}{% endblock breadcrumbs %}
+{% block actionbuttons %}
+    <button class="btn btn-danger btn-sm" data-url="{{del_url|default:'system:dashboard'}}" id="del-checked">    
+        <i class="fas fa-trash-alt"></i>
+    </button>
+{% endblock actionbuttons %}
+{% block card-body %}
+	<div class="table-responsive">
+		<table id="tb" class="table table-striped table-bordered mb-0 ">
+		{% csrf_token %}
+			<thead>
+				<th><input type="checkbox"></th>
+                <th>full name</th>
+				<th>email address</th>
+				<th>date sent</th>
+				<th>Actions</th>
+			</thead>    
+			<tbody>
+			{% for obj in object_list %}
+				<tr id="tr-{{obj.id}}">
+					<td><input type="checkbox" value="{{obj.id}}" name="single" id="chk-{{obj.id}}"></td>
+					<td class="td">{{obj.full_name}}</td>  
+					<td class="td">{{obj.email_address}}</td>                 
+                    <td class="td">{{obj.date_sent|date}}</td>
+					<td class="td">
+						<button type="button" class="btn btn-primary btn-sm view-msg-btn" data-detailurl="{{obj.get_absolute_url}}" data-messageid="{{obj.id}}">
+							<i class="fas fa-eye"></i>
+						</button>
+						<button type="button"  data-userid="{{obj.id}}" class="ask-delete btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">
+							<i class="fas fa-trash-alt"></i>
+						</button>
+					</td>             
+				</tr>
+			{% endfor %}          
+			</tbody>
+		</table>    
+	</div>
+{% endblock card-body %}

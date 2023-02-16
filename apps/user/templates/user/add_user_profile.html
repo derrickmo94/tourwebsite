@@ -1,0 +1,33 @@
+{% extends 'add.html' %}
+{% load i18n static crispy_forms_tags %}
+
+{% block card-content %}
+   <form method="POST" enctype="multipart/form-data" id="admin-user-form">
+      {% crispy admin_form %}
+      {% crispy form %}
+   </form>
+{% endblock card-content %}
+{% block inline-scripts %}
+   {{ block.super }}
+
+   let admin_checkbox = $('#user-form').find('#div_id_is_administrator .checkboxinput');
+   let title_div = $('#user-form').find('#div_id_title');
+   console.log(title_div)
+   if(admin_checkbox.is(':checked')){
+     title_div.show()
+   }else{
+     title_div.hide()
+   }
+   admin_checkbox.on('click',function(){
+      if ($(this).is(':checked')){
+         title_div.show()
+      }else{
+          title_div.hide()
+      }
+   })
+{% endblock inline-scripts %}
+
+
+
+
+

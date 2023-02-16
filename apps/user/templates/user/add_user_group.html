@@ -1,0 +1,15 @@
+{% extends 'add.html' %}
+{% load i18n static crispy_forms_tags %}
+
+{% block inline-styles %}
+   #user-group-form:not(form){
+      max-height:225px;
+      overflow-y:auto;
+      background: #FAFAFA; 
+      padding: 10px;
+   }
+{% endblock inline-styles %}
+
+{% block card-content %}
+   {% crispy form %}
+{% endblock card-content %}

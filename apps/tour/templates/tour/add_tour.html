@@ -1,0 +1,165 @@
+{% extends 'add.html' %}
+{% load i18n static crispy_forms_tags %}
+   
+{% block external-scripts %}
+  <script src ="{% static 'tour/js/formset/jquery.formset.js' %}?v=2"></script>
+{% endblock external-scripts %}
+
+{% block inline-styles %}
+   {{ block.super }}
+
+   
+{% endblock inline-styles %}
+
+{% block form-errors %}
+     {% if form.non_form_errors %}
+        {{ form|as_crispy_errors }}
+    {% endif %}
+{% endblock form-errors %}
+
+{% block card-content %}
+   <ul class="nav nav-tabs mb-2">
+      <li class="nav-item">
+         <button type="button" class="nav-link active" id="tour-tab" data-bs-toggle="tab" data-bs-target="#tour" role="tab" aria-controls="tour" aria-selected="true">General</button>
+      </li>
+      <li class="nav-item">
+         <button type="button" class="nav-link" id="tag-tab" data-bs-toggle="tab" data-bs-target="#tag" role="tab" aria-controls="tags">Tags</button>
+      </li>
+      <li class="nav-item">
+         <button type="button" class="nav-link" id="images-tab" data-bs-toggle="tab" data-bs-target="#images" role="tab" aria-controls="images">Images</button>
+      </li>
+      <li class="nav-item">
+         <button type="button" class="nav-link" id="related-tab" data-bs-toggle="tab" data-bs-target="#related" role="tab" aria-controls="related">Related</button>
+      </li>
+      <li class="nav-item">
+         <button type="button" class="nav-link" id="inclusion-tab" data-bs-toggle="tab" data-bs-target="#inclusion" role="tab" aria-controls="inclusion">Inclusions</button>
+      </li>
+      <li class="nav-item">
+         <button type="button" class="nav-link" id="insight-tab" data-bs-toggle="tab" data-bs-target="#insight" role="tab" aria-controls="insight">Insights</button>
+      </li>
+      <li class="nav-item">
+         <button type="button" class="nav-link" id="program-tab" data-bs-toggle="tab" data-bs-target="#program" role="tab" aria-controls="program">Activities</button>
+      </li>
+      <li class="nav-item">
+         <button type="button" class="nav-link" id="question-tab" data-bs-toggle="tab" data-bs-target="#question" role="tab" aria-controls="question">Questions</button>
+      </li> 
+   </ul>
+   <form method="POST" enctype="multipart/form-data" id="tour-form">
+      <div class="tab-content" id="tab-content">
+         <div class="tab-pane fade show active" id="tour" role="tabpanel" aria-labelledby="tour-tab">         
+            {% crispy form %}
+         </div>
+         <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">          
+            {% crispy tour_image_form helper %}
+         </div>
+         <div class="tab-pane fade" id="tag" role="tabpanel" aria-labelledby="tag-tab">
+            {% crispy tour_tag_form helper %}
+         </div>
+         <div class="tab-pane fade" id="related" role="tabpanel" aria-labelledby="related-tab">
+         
+            {% crispy tour_related_form helper %}
+         </div>
+         <div class="tab-pane fade" id="inclusion" role="tabpanel" aria-labelledby="inclusion-tab">
+        
+            {% crispy tour_inclusion_form helper %}
+         </div>
+         <div class="tab-pane fade" id="insight" role="tabpanel" aria-labelledby="insight-tab">
+
+            {% crispy tour_insight_form helper %}
+         </div>
+         <div class="tab-pane fade" id="program" role="tabpanel" aria-labelledby="program-tab">
+        
+            {% crispy tour_program_form helper %}
+         </div>
+         <div class="tab-pane fade" id="question" role="tabpanel" aria-labelledby="question-tab">
+           
+            {% crispy tour_question_form helper %}
+         </div> 
+      </div>
+   </form>
+{% endblock card-content %}
+
+{% block inline-scripts %}
+   {{ block.super }}
+
+   $(document).ready(function(){
+      $('.formset-row-{{tour_tag_form.prefix}}').formset({
+         prefix: '{{ tour_tag_form.prefix}}',
+         formCssClass: 'dynamic-tour-tag-form',
+         deleteCssClass: 'btn btn-sm btn-danger delete-row',
+         addCssClass: ' btn btn-sm btn-primary add-row'
+      });
+
+      $('.formset-row-{{tour_image_form.prefix}}').formset({
+         prefix: '{{ tour_image_form.prefix}}',
+         formCssClass: 'dynamic-tour-image-form',
+         deleteCssClass: 'btn btn-sm btn-danger delete-row text-center',
+         addCssClass: ' btn btn-sm btn-primary add-row',
+      });
+
+      $('.formset-row-{{tour_related_form.prefix}}').formset({
+         prefix: '{{ tour_related_form.prefix}}',
+         formCssClass: 'dynamic-tour-related-form',
+         deleteCssClass: 'btn btn-sm btn-danger delete-row',
+         addCssClass: ' btn btn-sm btn-primary add-row'
+      });
+
+      $('.formset-row-{{tour_inclusion_form.prefix}}').formset({
+         prefix: '{{ tour_inclusion_form.prefix}}',
+         formCssClass: 'dynamic-inclusion-form',
+         deleteCssClass: 'btn btn-sm btn-danger delete-row',
+         addCssClass: ' btn btn-sm btn-primary add-row'
+      });
+
+      $('.formset-row-{{tour_insight_form.prefix}}').formset({
+         prefix: '{{ tour_insight_form.prefix}}',
+         formCssClass: 'dynamic-insight-form',
+         deleteCssClass: 'btn btn-sm btn-danger delete-row',
+         addCssClass: ' btn btn-sm btn-primary add-row'
+      });
+
+      $('.formset-row-{{tour_program_form.prefix}}').formset({
+         prefix: '{{ tour_program_form.prefix}}',
+         formCssClass: 'dynamic-program-form',
+         deleteCssClass: 'btn btn-sm btn-danger delete-row',
+         addCssClass: ' btn btn-sm btn-primary add-row',
+      });
+
+      $('.formset-row-{{tour_question_form.prefix}}').formset({
+         prefix: '{{ tour_question_form.prefix}}',
+         formCssClass: 'dynamic-question-form',
+         deleteCssClass: 'btn btn-sm btn-danger delete-row',
+         addCssClass: 'btn btn-sm btn-primary add-row text-end',
+         
+      });
+      
+   })
+
+   let ad_checkbox = $('#tour-form').find('#div_id_advertise .checkboxinput'),
+      ad_title = $('#tour-form').find('#div_id_ad_title'),
+      ad_name = $('#tour-form').find('#div_id_ad_name'),
+      ad_description = $('#tour-form').find('#div_id_ad_description');
+ 
+   if(ad_checkbox.is(':checked')){
+     ad_title.show()
+     ad_name.show()
+     ad_description.show()
+   }else{
+     ad_title.hide()
+     ad_name.hide()
+     ad_description.hide()
+   }
+
+   ad_checkbox.on('click',function(){
+     if(ad_checkbox.is(':checked')){
+      ad_title.show()
+      ad_name.show()
+      ad_description.show()
+      }else{
+      ad_title.hide()
+      ad_name.hide()
+      ad_description.hide()
+      }
+   })
+  
+{% endblock inline-scripts %}
